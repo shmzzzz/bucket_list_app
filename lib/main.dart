@@ -1,3 +1,4 @@
+import 'package:bucket_list_app/theme.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -13,8 +14,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+        colorScheme: MaterialTheme.lightScheme().toColorScheme(),
+      ),
+      darkTheme: ThemeData(
+        colorScheme: MaterialTheme.darkScheme().toColorScheme(),
       ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
