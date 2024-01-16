@@ -1,4 +1,3 @@
-import 'package:bucket_list_app/theme.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatelessWidget {
@@ -41,31 +40,15 @@ class LoginPage extends StatelessWidget {
             const SizedBox(height: 40),
             OutlinedButton(
               onPressed: () {},
-              style: OutlinedButton.styleFrom(
-                backgroundColor: MaterialTheme.lightScheme().primary,
-              ),
-              child: Text(
+              child: const Text(
                 'LOGIN',
-                style: TextStyle(
-                  color: MaterialTheme.lightScheme().onPrimary,
-                ),
               ),
             ),
             const SizedBox(height: 20),
             OutlinedButton(
               onPressed: () {},
-              style: OutlinedButton.styleFrom(
-                backgroundColor: MaterialTheme.lightScheme().onPrimary,
-                side: BorderSide(
-                  color: MaterialTheme.lightScheme().primary,
-                  width: 0.5,
-                ),
-              ),
-              child: Text(
+              child: const Text(
                 'CREATE ACCOUNT',
-                style: TextStyle(
-                  color: MaterialTheme.lightScheme().primary,
-                ),
               ),
             ),
           ],
