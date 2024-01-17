@@ -1,3 +1,4 @@
+import 'package:bucket_list_app/presentation/page/list_page.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatelessWidget {
@@ -39,7 +40,13 @@ class LoginPage extends StatelessWidget {
             ),
             const SizedBox(height: 40),
             OutlinedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => const ListPage(),
+                  ),
+                );
+              },
               child: const Text(
                 'LOGIN',
               ),
