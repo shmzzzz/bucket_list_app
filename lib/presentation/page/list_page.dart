@@ -1,3 +1,4 @@
+import 'package:bucket_list_app/presentation/page/detail_page.dart';
 import 'package:bucket_list_app/theme.dart';
 import 'package:flutter/material.dart';
 
@@ -181,7 +182,21 @@ class ListPage extends StatelessWidget {
               label: 'マイページ',
             ),
           ],
+          currentIndex: 0,
           type: BottomNavigationBarType.fixed,
+          onTap: (value) {
+            switch (value) {
+              case 0:
+                break;
+              case 1:
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => DetailPage(),
+                  ),
+                );
+              default:
+            }
+          },
         ),
       ),
     );
