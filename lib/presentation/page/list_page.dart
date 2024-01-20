@@ -1,3 +1,4 @@
+import 'package:bucket_list_app/presentation/page/achieved_list_page.dart';
 import 'package:bucket_list_app/presentation/page/detail_page.dart';
 import 'package:bucket_list_app/theme.dart';
 import 'package:flutter/material.dart';
@@ -191,9 +192,17 @@ class ListPage extends StatelessWidget {
               case 1:
                 Navigator.of(context).push(
                   MaterialPageRoute(
-                    builder: (context) => DetailPage(),
+                    builder: (context) => const DetailPage(),
                   ),
                 );
+              case 2:
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => const AchievedListPage(),
+                  ),
+                );
+              case 3:
+                break;
               default:
             }
           },
