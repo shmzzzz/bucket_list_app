@@ -1,10 +1,10 @@
 import 'package:bucket_list_app/presentation/page/achieved_list_page.dart';
+import 'package:bucket_list_app/presentation/page/detail_page.dart';
 import 'package:bucket_list_app/presentation/page/list_page.dart';
-import 'package:bucket_list_app/presentation/page/my_page.dart';
 import 'package:flutter/material.dart';
 
-class DetailPage extends StatelessWidget {
-  const DetailPage({super.key});
+class MyPage extends StatelessWidget {
+  const MyPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -107,7 +107,7 @@ class DetailPage extends StatelessWidget {
       ),
       body: Center(
         child: Text(
-          'This is DETAIL PAGE',
+          'This is MY PAGE',
           style: Theme.of(context).textTheme.titleLarge,
         ),
       ),
@@ -130,7 +130,7 @@ class DetailPage extends StatelessWidget {
             label: 'マイページ',
           ),
         ],
-        currentIndex: 1,
+        currentIndex: 3,
         type: BottomNavigationBarType.fixed,
         onTap: (value) {
           switch (value) {
@@ -141,19 +141,20 @@ class DetailPage extends StatelessWidget {
                 ),
               );
             case 1:
-              break;
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => const DetailPage(),
+                ),
+              );
             case 2:
               Navigator.of(context).push(
                 MaterialPageRoute(
                   builder: (context) => const AchievedListPage(),
                 ),
               );
+              break;
             case 3:
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (context) => const MyPage(),
-                ),
-              );
+              break;
             default:
           }
         },
