@@ -1,5 +1,6 @@
 import 'package:bucket_list_app/presentation/page/achieved_list_page.dart';
 import 'package:bucket_list_app/presentation/page/detail_page.dart';
+import 'package:bucket_list_app/presentation/page/my_page.dart';
 import 'package:bucket_list_app/theme.dart';
 import 'package:flutter/material.dart';
 
@@ -202,7 +203,11 @@ class ListPage extends StatelessWidget {
                   ),
                 );
               case 3:
-                break;
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => const MyPage(),
+                  ),
+                );
               default:
             }
           },

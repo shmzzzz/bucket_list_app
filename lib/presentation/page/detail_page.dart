@@ -1,5 +1,6 @@
 import 'package:bucket_list_app/presentation/page/achieved_list_page.dart';
 import 'package:bucket_list_app/presentation/page/list_page.dart';
+import 'package:bucket_list_app/presentation/page/my_page.dart';
 import 'package:flutter/material.dart';
 
 class DetailPage extends StatelessWidget {
@@ -148,8 +149,11 @@ class DetailPage extends StatelessWidget {
                 ),
               );
             case 3:
-              break;
-
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => const MyPage(),
+                ),
+              );
             default:
           }
         },
