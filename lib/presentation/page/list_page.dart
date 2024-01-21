@@ -1,7 +1,7 @@
 import 'package:bucket_list_app/presentation/page/achieved_list_page.dart';
 import 'package:bucket_list_app/presentation/page/detail_page.dart';
 import 'package:bucket_list_app/presentation/page/my_page.dart';
-import 'package:bucket_list_app/theme.dart';
+import 'package:bucket_list_app/presentation/theme.dart';
 import 'package:flutter/material.dart';
 
 class ListPage extends StatelessWidget {
