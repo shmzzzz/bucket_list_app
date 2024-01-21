@@ -1,5 +1,5 @@
 import 'package:bucket_list_app/presentation/page/login_page.dart';
-import 'package:bucket_list_app/theme.dart';
+import 'package:bucket_list_app/presentation/theme.dart';
 import 'package:flutter/material.dart';
 
 void main() {
