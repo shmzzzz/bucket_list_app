@@ -1,9 +1,14 @@
 import "package:flutter/material.dart";
+import "package:google_fonts/google_fonts.dart";
 
 class MaterialTheme {
   final TextTheme textTheme;
 
   const MaterialTheme(this.textTheme);
+
+  static TextTheme openSansTextTheme(BuildContext context) {
+    return GoogleFonts.openSansTextTheme(Theme.of(context).textTheme);
+  }
 
   static MaterialScheme lightScheme() {
     return const MaterialScheme(
