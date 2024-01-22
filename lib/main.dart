@@ -1,4 +1,4 @@
-import 'package:bucket_list_app/presentation/page/login_page.dart';
+import 'package:bucket_list_app/common/router.dart';
 import 'package:bucket_list_app/presentation/theme.dart';
 import 'package:flutter/material.dart';
 
@@ -11,7 +11,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
+      routerDelegate: goRouter.routerDelegate,
+      routeInformationParser: goRouter.routeInformationParser,
+      routeInformationProvider: goRouter.routeInformationProvider,
       theme: ThemeData(
         colorScheme: MaterialTheme.lightScheme().toColorScheme(),
         textTheme: MaterialTheme.openSansTextTheme(context),
@@ -20,7 +23,6 @@ class MyApp extends StatelessWidget {
         colorScheme: MaterialTheme.darkScheme().toColorScheme(),
         textTheme: MaterialTheme.openSansTextTheme(context),
       ),
-      home: const LoginPage(),
     );
   }
 }
