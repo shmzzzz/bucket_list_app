@@ -1,7 +1,5 @@
-import 'package:bucket_list_app/presentation/page/achieved_list_page.dart';
-import 'package:bucket_list_app/presentation/page/list_page.dart';
-import 'package:bucket_list_app/presentation/page/my_page.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class DetailPage extends StatelessWidget {
   const DetailPage({super.key});
@@ -135,25 +133,13 @@ class DetailPage extends StatelessWidget {
         onTap: (value) {
           switch (value) {
             case 0:
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (context) => const ListPage(),
-                ),
-              );
+              context.push('/list');
             case 1:
               break;
             case 2:
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (context) => const AchievedListPage(),
-                ),
-              );
+              context.push('/achieved');
             case 3:
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (context) => const MyPage(),
-                ),
-              );
+              context.push('/mypage');
             default:
           }
         },
