@@ -1,5 +1,5 @@
-import 'package:bucket_list_app/presentation/page/list_page.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -41,11 +41,7 @@ class LoginPage extends StatelessWidget {
             const SizedBox(height: 40),
             OutlinedButton(
               onPressed: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) => const ListPage(),
-                  ),
-                );
+                context.go('/list');
               },
               child: const Text(
                 'LOGIN',
