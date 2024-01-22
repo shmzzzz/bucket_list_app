@@ -1,8 +1,14 @@
 import 'package:bucket_list_app/common/router.dart';
+import 'package:bucket_list_app/infrastructure/firebase_options.dart';
 import 'package:bucket_list_app/presentation/theme.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MyApp());
 }
 
