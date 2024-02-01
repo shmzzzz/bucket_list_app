@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -104,9 +105,23 @@ class MyPage extends StatelessWidget {
         ],
       ),
       body: Center(
-        child: Text(
-          'This is MY PAGE',
-          style: Theme.of(context).textTheme.titleLarge,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              'This is MY PAGE',
+              style: Theme.of(context).textTheme.titleLarge,
+            ),
+            OutlinedButton(
+              onPressed: () async {
+                await FirebaseAuth.instance.signOut();
+                context.go('/login');
+              },
+              child: const Text(
+                'ログアウト',
+              ),
+            ),
+          ],
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
