@@ -147,12 +147,14 @@ class LoginPage extends HookWidget {
               ),
             ),
             const SizedBox(height: 20),
-            TextButton(
-              onPressed: () {
+            InkWell(
+              onTap: () {
                 isLogin.value = !isLogin.value;
               },
-              child: Text(
-                isLogin.value ? 'CREATE ACCOUNT' : 'LOGIN',
+              child: Center(
+                child: Text(
+                  isLogin.value ? '新規登録はこちら' : 'アカウントをお持ちの方はこちら',
+                ),
               ),
             ),
           ],

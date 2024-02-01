@@ -28,10 +28,12 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: MaterialTheme.lightScheme().toColorScheme(),
         textTheme: MaterialTheme.openSansTextTheme(context),
+        highlightColor: MaterialTheme.lightScheme().onPrimary,
       ),
       darkTheme: ThemeData(
         colorScheme: MaterialTheme.darkScheme().toColorScheme(),
         textTheme: MaterialTheme.openSansTextTheme(context),
+        highlightColor: MaterialTheme.darkScheme().onPrimary,
       ),
     );
   }
