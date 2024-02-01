@@ -38,16 +38,16 @@ class LoginPage extends HookWidget {
         if (isLogin.value) {
           // ログイン時の処理
           (await firebase.signInWithEmailAndPassword(
-            email: emailController.value.text,
-            password: passwordController.value.text,
+            email: emailController.text,
+            password: passwordController.text,
           ))
               .user;
           context.go('/list');
         } else {
           // 新規登録時の処理
           final User? user = (await firebase.createUserWithEmailAndPassword(
-            email: emailController.value.text,
-            password: passwordController.value.text,
+            email: emailController.text,
+            password: passwordController.text,
           ))
               .user;
           context.go('/mypage');
@@ -56,7 +56,7 @@ class LoginPage extends HookWidget {
               .doc(user!.uid)
               .set({
             'username': 'ゲスト',
-            'email': emailController.value.text,
+            'email': emailController.text,
           });
           isLogin.value = true;
         }
