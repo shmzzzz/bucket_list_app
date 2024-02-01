@@ -17,7 +17,7 @@ class LoginPage extends HookWidget {
     final emailController = useTextEditingController(text: '');
     final passwordController = useTextEditingController(text: '');
 
-    final isObscured = useState(false);
+    final isObscured = useState(true);
     final isLogin = useState(false);
     final isAuthenticating = useState(false);
 
@@ -42,7 +42,7 @@ class LoginPage extends HookWidget {
             password: passwordController.value.text,
           ))
               .user;
-          context.go('/detail');
+          context.go('/list');
         } else {
           // 新規登録時の処理
           final User? user = (await firebase.createUserWithEmailAndPassword(
