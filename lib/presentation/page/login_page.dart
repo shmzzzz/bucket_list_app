@@ -1,8 +1,8 @@
 import 'package:bucket_list_app/presentation/theme/strings.dart';
-import 'package:bucket_list_app/presentation/widget/auth_switch_button.dart';
-import 'package:bucket_list_app/presentation/widget/auth_switch_text.dart';
-import 'package:bucket_list_app/presentation/widget/email_text_form.dart';
-import 'package:bucket_list_app/presentation/widget/password_text_form.dart';
+import 'package:bucket_list_app/presentation/widgets/auth_switch_button.dart';
+import 'package:bucket_list_app/presentation/widgets/auth_switch_text.dart';
+import 'package:bucket_list_app/presentation/widgets/email_text_form.dart';
+import 'package:bucket_list_app/presentation/widgets/password_text_form.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
