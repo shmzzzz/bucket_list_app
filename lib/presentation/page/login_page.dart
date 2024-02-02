@@ -1,3 +1,8 @@
+import 'package:bucket_list_app/presentation/theme/strings.dart';
+import 'package:bucket_list_app/presentation/widget/auth_switch_button.dart';
+import 'package:bucket_list_app/presentation/widget/auth_switch_text.dart';
+import 'package:bucket_list_app/presentation/widget/email_text_form.dart';
+import 'package:bucket_list_app/presentation/widget/password_text_form.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -14,10 +19,9 @@ class LoginPage extends HookWidget {
     final emailFormKey = GlobalKey<FormState>();
     final passwordFormKey = GlobalKey<FormState>();
 
-    final emailController = useTextEditingController(text: '');
-    final passwordController = useTextEditingController(text: '');
+    final emailController = useTextEditingController(text: Strings.empty);
+    final passwordController = useTextEditingController(text: Strings.empty);
 
-    final isObscured = useState(true);
     final isLogin = useState(false);
     final isAuthenticating = useState(false);
 
@@ -64,7 +68,9 @@ class LoginPage extends HookWidget {
         ScaffoldMessenger.of(context).clearSnackBars();
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text(error.message ?? 'Authentication failed'),
+            content: Text(
+              error.message ?? Strings.errorAuthentication,
+            ),
           ),
         );
         // エラーが発生しているので認証処理は行っていない
@@ -74,88 +80,35 @@ class LoginPage extends HookWidget {
 
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 45),
+        padding: const EdgeInsets.symmetric(horizontal: 44),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const Text(
-              'Bucket List',
+              Strings.appTitle,
               style: TextStyle(
                 fontSize: 48,
                 fontWeight: FontWeight.bold,
               ),
             ),
             const SizedBox(height: 80),
-            Form(
-              key: emailFormKey,
-              child: TextFormField(
-                controller: emailController,
-                decoration: const InputDecoration(
-                  border: OutlineInputBorder(),
-                  labelText: 'Email',
-                ),
-                keyboardType: TextInputType.emailAddress,
-                autocorrect: false,
-                textCapitalization: TextCapitalization.none,
-                validator: (value) {
-                  if (value == null ||
-                      value.trim().isEmpty ||
-                      !value.contains('@')) {
-                    return 'メールアドレスを入力してください。';
-                  }
-                  return null;
-                },
-                onSaved: (newValue) {
-                  emailController.text = newValue!;
-                },
-              ),
+            EmailTextForm(
+              formKey: emailFormKey,
+              controller: emailController,
             ),
             const SizedBox(height: 20),
-            Form(
-              key: passwordFormKey,
-              child: TextFormField(
-                controller: passwordController,
-                decoration: InputDecoration(
-                  border: const OutlineInputBorder(),
-                  labelText: 'Password',
-                  suffixIcon: IconButton(
-                    icon: isObscured.value
-                        ? const Icon(Icons.visibility)
-                        : const Icon(Icons.visibility_off_outlined),
-                    onPressed: () {
-                      isObscured.value = !isObscured.value;
-                    },
-                  ),
-                ),
-                obscureText: isObscured.value,
-                validator: (value) {
-                  if (value == null || value.trim().isEmpty) {
-                    return 'パスワードを入力してください。';
-                  }
-                  return null;
-                },
-                onSaved: (newValue) {
-                  passwordController.text = newValue!;
-                },
-              ),
+            PasswordTextForm(
+              formKey: passwordFormKey,
+              controller: passwordController,
             ),
             const SizedBox(height: 40),
-            OutlinedButton(
-              onPressed: submit,
-              child: Text(
-                isLogin.value ? 'LOGIN' : 'CREATE ACCOUNT',
-              ),
+            AuthSwitchButton(
+              submit: submit,
+              isLogin: isLogin,
             ),
             const SizedBox(height: 20),
-            InkWell(
-              onTap: () {
-                isLogin.value = !isLogin.value;
-              },
-              child: Center(
-                child: Text(
-                  isLogin.value ? '新規登録はこちら' : 'アカウントをお持ちの方はこちら',
-                ),
-              ),
+            AuthSwitchText(
+              isLogin: isLogin,
             ),
           ],
         ),
