@@ -10,6 +10,18 @@ class AppStrings {
   static const password = 'Password';
   static const errorEmail = 'メールアドレスを入力してください。';
   static const errorPassword = 'パスワードを入力してください。';
-  static const errorAuthentication = '認証に失敗しました。';
   static const empty = '';
+
+  /// FirebaseAuth関連のエラーメッセージ
+  static const emailAlreadyInUseMessage = 'すでに登録されているメールアドレスです。\nサインインしてください。';
+  static const invalidEmailMessage = '無効なメールアドレスです。';
+  static const operationNotAllowedMessage = 'メールアドレスまたはパスワードが無効です。';
+  static const weakPasswordMessage = 'より強力なパスワードを入力してください。';
+  static const userDisabledMessage = 'このユーザーは利用できません。';
+  static const userNotFoundMessage = 'このユーザーは登録されていません。';
+  static const wrongPasswordMessage = 'パスワードが間違っています。\n正しいパスワードを入力してください。';
+  static const accountExistsWithDifferentCredentialMessage =
+      'すでに登録されているメールアドレスです。\nサインインしてください。';
+  static const invalidCredentialMessage = 'パスワードが間違っています。\n正しいパスワードを入力してください。';
+  static const unknownMessage = '予期しないエラーが発生しました。';
 }
