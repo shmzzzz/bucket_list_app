@@ -1,4 +1,5 @@
-import 'package:bucket_list_app/presentation/theme/app_strings.dart';
+import 'package:bucket_list_app/infrastructure/firebase/firebase_auth_error_handler.dart';
+import 'package:bucket_list_app/infrastructure/firebase/firebase_auth_ext.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -27,16 +28,12 @@ class SignUpUseCase {
       });
       setSignInStatus(true);
     } on FirebaseAuthException catch (error) {
-      ScaffoldMessenger.of(context).clearSnackBars();
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text(
-            error.message ?? AppStrings.errorAuthentication,
-          ),
-        ),
+      var message = FirebaseAuthExt.fromCode(error.code).message;
+      FirebaseAuthErrorHandler.handleFirebaseAuthError(
+        context: context,
+        message: message,
+        setAuthenticatingStatus: setAuthenticatingStatus,
       );
-      // エラーが発生しているので認証処理は行っていない
-      setAuthenticatingStatus(false);
     }
   }
 }
