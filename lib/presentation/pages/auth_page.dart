@@ -1,5 +1,5 @@
 import 'package:bucket_list_app/presentation/theme/sizes.dart';
-import 'package:bucket_list_app/presentation/theme/strings.dart';
+import 'package:bucket_list_app/presentation/theme/app_strings.dart';
 import 'package:bucket_list_app/presentation/widgets/auth_switch_button.dart';
 import 'package:bucket_list_app/presentation/widgets/auth_switch_text.dart';
 import 'package:bucket_list_app/presentation/widgets/email_text_form.dart';
@@ -20,8 +20,8 @@ class AuthPage extends HookWidget {
     final emailFormKey = GlobalKey<FormState>();
     final passwordFormKey = GlobalKey<FormState>();
 
-    final emailController = useTextEditingController(text: Strings.empty);
-    final passwordController = useTextEditingController(text: Strings.empty);
+    final emailController = useTextEditingController(text: AppStrings.empty);
+    final passwordController = useTextEditingController(text: AppStrings.empty);
 
     final isSignIn = useState(true);
     final isAuthenticating = useState(false);
@@ -70,7 +70,7 @@ class AuthPage extends HookWidget {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             content: Text(
-              error.message ?? Strings.errorAuthentication,
+              error.message ?? AppStrings.errorAuthentication,
             ),
           ),
         );
@@ -86,7 +86,7 @@ class AuthPage extends HookWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const Text(
-              Strings.appTitle,
+              AppStrings.appTitle,
               style: TextStyle(
                 fontSize: Sizes.p48,
                 fontWeight: FontWeight.bold,

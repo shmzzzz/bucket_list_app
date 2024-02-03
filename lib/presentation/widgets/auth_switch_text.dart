@@ -1,4 +1,4 @@
-import 'package:bucket_list_app/presentation/theme/strings.dart';
+import 'package:bucket_list_app/presentation/theme/app_strings.dart';
 import 'package:flutter/material.dart';
 
 /// ログイン画面
@@ -19,7 +19,7 @@ class AuthSwitchText extends StatelessWidget {
       },
       child: Center(
         child: Text(
-          isSignIn.value ? Strings.authSignUp : Strings.authSignIn,
+          isSignIn.value ? AppStrings.authSignUp : AppStrings.authSignIn,
         ),
       ),
     );

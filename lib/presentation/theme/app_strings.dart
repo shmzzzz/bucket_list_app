@@ -1,6 +1,6 @@
 /// 文字列一覧
 
-class Strings {
+class AppStrings {
   static const appTitle = 'Bucket List';
   static const signIn = 'SIGN IN';
   static const signUp = 'SIGN UP';

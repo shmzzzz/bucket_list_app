@@ -1,4 +1,4 @@
-import 'package:bucket_list_app/presentation/theme/strings.dart';
+import 'package:bucket_list_app/presentation/theme/app_strings.dart';
 import 'package:flutter/material.dart';
 
 /// ログイン画面
@@ -18,7 +18,7 @@ class AuthSwitchButton extends StatelessWidget {
     return OutlinedButton(
       onPressed: submit,
       child: Text(
-        isSignIn.value ? Strings.signIn : Strings.signUp,
+        isSignIn.value ? AppStrings.signIn : AppStrings.signUp,
       ),
     );
   }

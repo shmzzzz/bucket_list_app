@@ -1,4 +1,4 @@
-import 'package:bucket_list_app/presentation/theme/strings.dart';
+import 'package:bucket_list_app/presentation/theme/app_strings.dart';
 import 'package:flutter/material.dart';
 
 /// ログイン画面
@@ -21,14 +21,14 @@ class EmailTextForm extends StatelessWidget {
         controller: controller,
         decoration: const InputDecoration(
           border: OutlineInputBorder(),
-          labelText: Strings.email,
+          labelText: AppStrings.email,
         ),
         keyboardType: TextInputType.emailAddress,
         autocorrect: false,
         textCapitalization: TextCapitalization.none,
         validator: (value) {
           if (value == null || value.trim().isEmpty || !value.contains('@')) {
-            return Strings.errorEmail;
+            return AppStrings.errorEmail;
           }
           return null;
         },
