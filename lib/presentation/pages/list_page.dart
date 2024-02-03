@@ -1,4 +1,4 @@
-import 'package:bucket_list_app/presentation/theme.dart';
+import 'package:bucket_list_app/presentation/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 

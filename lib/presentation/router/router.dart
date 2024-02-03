@@ -1,9 +1,9 @@
 import 'package:bucket_list_app/main.dart';
-import 'package:bucket_list_app/presentation/page/achieved_list_page.dart';
-import 'package:bucket_list_app/presentation/page/detail_page.dart';
-import 'package:bucket_list_app/presentation/page/list_page.dart';
-import 'package:bucket_list_app/presentation/page/login_page.dart';
-import 'package:bucket_list_app/presentation/page/my_page.dart';
+import 'package:bucket_list_app/presentation/pages/achieved_list_page.dart';
+import 'package:bucket_list_app/presentation/pages/auth_page.dart';
+import 'package:bucket_list_app/presentation/pages/detail_page.dart';
+import 'package:bucket_list_app/presentation/pages/list_page.dart';
+import 'package:bucket_list_app/presentation/pages/my_page.dart';
 import 'package:go_router/go_router.dart';
 
 final goRouter = GoRouter(
@@ -13,8 +13,8 @@ final goRouter = GoRouter(
       builder: (context, state) => const HomePage(),
       routes: <GoRoute>[
         GoRoute(
-          path: 'login',
-          builder: (context, state) => const LoginPage(),
+          path: 'auth',
+          builder: (context, state) => const AuthPage(),
         ),
         GoRoute(
           path: 'mypage',
@@ -23,8 +23,8 @@ final goRouter = GoRouter(
       ],
     ),
     GoRoute(
-      path: '/login',
-      builder: (context, state) => const LoginPage(),
+      path: '/auth',
+      builder: (context, state) => const AuthPage(),
     ),
     GoRoute(
       path: '/list',
