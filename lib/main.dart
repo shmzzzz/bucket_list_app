@@ -1,5 +1,5 @@
 import 'package:bucket_list_app/application/state/auth_state_changes_provider.dart';
-import 'package:bucket_list_app/infrastructure/firebase_options.dart';
+import 'package:bucket_list_app/infrastructure/firebase/firebase_options.dart';
 import 'package:bucket_list_app/presentation/pages/auth_page.dart';
 import 'package:bucket_list_app/presentation/pages/list_page.dart';
 import 'package:bucket_list_app/presentation/router/router.dart';
