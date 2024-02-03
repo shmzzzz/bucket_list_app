@@ -1,5 +1,6 @@
-import 'package:bucket_list_app/presentation/theme/sizes.dart';
+import 'package:bucket_list_app/application/usecases/sign_in_use_case.dart';
 import 'package:bucket_list_app/presentation/theme/app_strings.dart';
+import 'package:bucket_list_app/presentation/theme/sizes.dart';
 import 'package:bucket_list_app/presentation/widgets/auth_switch_button.dart';
 import 'package:bucket_list_app/presentation/widgets/auth_switch_text.dart';
 import 'package:bucket_list_app/presentation/widgets/email_text_form.dart';
@@ -42,12 +43,12 @@ class AuthPage extends HookWidget {
         isAuthenticating.value = true;
         if (isSignIn.value) {
           // ログイン時の処理
-          (await firebase.signInWithEmailAndPassword(
+          await SignInUseCase.signIn(
             email: emailController.text,
             password: passwordController.text,
-          ))
-              .user;
-          context.go('/list');
+            context: context,
+            setAuthenticatingState: (value) => isAuthenticating.value = value,
+          );
         } else {
           // 新規登録時の処理
           final User? user = (await firebase.createUserWithEmailAndPassword(
