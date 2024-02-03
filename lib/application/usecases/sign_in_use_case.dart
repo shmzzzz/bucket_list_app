@@ -8,12 +8,12 @@ class SignInUseCase {
     required String email,
     required String password,
     required BuildContext context,
-    required Function(bool) setAuthenticatingState,
+    required Function(bool) setAuthenticatingStatus,
   }) async {
     final firebase = FirebaseAuth.instance;
 
     try {
-      setAuthenticatingState(true);
+      setAuthenticatingStatus(true);
 
       (await firebase.signInWithEmailAndPassword(
         email: email,
@@ -31,7 +31,7 @@ class SignInUseCase {
         ),
       );
       // エラーが発生しているので認証処理は行っていない
-      setAuthenticatingState(false);
+      setAuthenticatingStatus(false);
     }
   }
 }
