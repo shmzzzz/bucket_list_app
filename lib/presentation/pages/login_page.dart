@@ -1,3 +1,4 @@
+import 'package:bucket_list_app/presentation/theme/sizes.dart';
 import 'package:bucket_list_app/presentation/theme/strings.dart';
 import 'package:bucket_list_app/presentation/widgets/auth_switch_button.dart';
 import 'package:bucket_list_app/presentation/widgets/auth_switch_text.dart';
@@ -80,33 +81,33 @@ class LoginPage extends HookWidget {
 
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 44),
+        padding: const EdgeInsets.symmetric(horizontal: Sizes.p44),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const Text(
               Strings.appTitle,
               style: TextStyle(
-                fontSize: 48,
+                fontSize: Sizes.p48,
                 fontWeight: FontWeight.bold,
               ),
             ),
-            const SizedBox(height: 80),
+            const SizedBox(height: Sizes.p80),
             EmailTextForm(
               formKey: emailFormKey,
               controller: emailController,
             ),
-            const SizedBox(height: 20),
+            const SizedBox(height: Sizes.p20),
             PasswordTextForm(
               formKey: passwordFormKey,
               controller: passwordController,
             ),
-            const SizedBox(height: 40),
+            const SizedBox(height: Sizes.p40),
             AuthSwitchButton(
               submit: submit,
               isLogin: isLogin,
             ),
-            const SizedBox(height: 20),
+            const SizedBox(height: Sizes.p20),
             AuthSwitchText(
               isLogin: isLogin,
             ),
