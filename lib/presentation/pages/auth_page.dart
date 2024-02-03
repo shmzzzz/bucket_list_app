@@ -10,8 +10,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
 
-class LoginPage extends HookWidget {
-  const LoginPage({super.key});
+class AuthPage extends HookWidget {
+  const AuthPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,7 @@ class LoginPage extends HookWidget {
     final emailController = useTextEditingController(text: Strings.empty);
     final passwordController = useTextEditingController(text: Strings.empty);
 
-    final isLogin = useState(false);
+    final isSignIn = useState(true);
     final isAuthenticating = useState(false);
 
     void submit() async {
@@ -40,7 +40,7 @@ class LoginPage extends HookWidget {
 
       try {
         isAuthenticating.value = true;
-        if (isLogin.value) {
+        if (isSignIn.value) {
           // ログイン時の処理
           (await firebase.signInWithEmailAndPassword(
             email: emailController.text,
@@ -63,7 +63,7 @@ class LoginPage extends HookWidget {
             'username': 'ゲスト',
             'email': emailController.text,
           });
-          isLogin.value = true;
+          isSignIn.value = true;
         }
       } on FirebaseAuthException catch (error) {
         ScaffoldMessenger.of(context).clearSnackBars();
@@ -105,11 +105,11 @@ class LoginPage extends HookWidget {
             const SizedBox(height: Sizes.p40),
             AuthSwitchButton(
               submit: submit,
-              isLogin: isLogin,
+              isSignIn: isSignIn,
             ),
             const SizedBox(height: Sizes.p20),
             AuthSwitchText(
-              isLogin: isLogin,
+              isSignIn: isSignIn,
             ),
           ],
         ),

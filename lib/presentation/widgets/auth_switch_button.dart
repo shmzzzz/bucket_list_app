@@ -7,18 +7,18 @@ class AuthSwitchButton extends StatelessWidget {
   const AuthSwitchButton({
     super.key,
     required this.submit,
-    required this.isLogin,
+    required this.isSignIn,
   });
 
   final void Function() submit;
-  final ValueNotifier<bool> isLogin;
+  final ValueNotifier<bool> isSignIn;
 
   @override
   Widget build(BuildContext context) {
     return OutlinedButton(
       onPressed: submit,
       child: Text(
-        isLogin.value ? Strings.signIn : Strings.signUp,
+        isSignIn.value ? Strings.signIn : Strings.signUp,
       ),
     );
   }

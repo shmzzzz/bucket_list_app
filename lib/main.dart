@@ -1,8 +1,8 @@
 import 'package:bucket_list_app/application/state/auth_state_changes_provider.dart';
-import 'package:bucket_list_app/presentation/router/router.dart';
 import 'package:bucket_list_app/infrastructure/firebase_options.dart';
+import 'package:bucket_list_app/presentation/pages/auth_page.dart';
 import 'package:bucket_list_app/presentation/pages/list_page.dart';
-import 'package:bucket_list_app/presentation/pages/login_page.dart';
+import 'package:bucket_list_app/presentation/router/router.dart';
 import 'package:bucket_list_app/presentation/theme/theme.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -46,7 +46,7 @@ class HomePage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final authStateAsync = ref.watch(authStateChangesProvider);
     return authStateAsync.when(
-      data: (user) => user != null ? const ListPage() : const LoginPage(),
+      data: (user) => user != null ? const ListPage() : const AuthPage(),
       loading: () => const CircularProgressIndicator(),
       error: (err, stack) => Text('Error: $err'),
     );

@@ -6,20 +6,20 @@ import 'package:flutter/material.dart';
 class AuthSwitchText extends StatelessWidget {
   const AuthSwitchText({
     super.key,
-    required this.isLogin,
+    required this.isSignIn,
   });
 
-  final ValueNotifier<bool> isLogin;
+  final ValueNotifier<bool> isSignIn;
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        isLogin.value = !isLogin.value;
+        isSignIn.value = !isSignIn.value;
       },
       child: Center(
         child: Text(
-          isLogin.value ? Strings.authSignUp : Strings.authSignIn,
+          isSignIn.value ? Strings.authSignUp : Strings.authSignIn,
         ),
       ),
     );
