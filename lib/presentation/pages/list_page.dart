@@ -74,23 +74,6 @@ class ListPage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
               child: Text(
-                '詳細',
-                style: Theme.of(context).textTheme.titleSmall,
-              ),
-            ),
-            const ListTile(
-              leading: Icon(
-                Icons.details,
-              ),
-              title: Text('やりたいこと'),
-            ),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20),
-              child: Divider(),
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-              child: Text(
                 '達成済みリスト',
                 style: Theme.of(context).textTheme.titleSmall,
               ),
@@ -170,10 +153,6 @@ class ListPage extends StatelessWidget {
               label: 'リスト',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.details),
-              label: '詳細',
-            ),
-            BottomNavigationBarItem(
               icon: Icon(Icons.check),
               label: '達成済み',
             ),
@@ -189,10 +168,8 @@ class ListPage extends StatelessWidget {
               case 0:
                 break;
               case 1:
-                context.push('/detail');
-              case 2:
                 context.push('/achieved');
-              case 3:
+              case 2:
                 context.push('/mypage');
               default:
             }

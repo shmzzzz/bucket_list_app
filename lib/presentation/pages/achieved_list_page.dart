@@ -57,23 +57,6 @@ class AchievedListPage extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
             child: Text(
-              '詳細',
-              style: Theme.of(context).textTheme.titleSmall,
-            ),
-          ),
-          const ListTile(
-            leading: Icon(
-              Icons.details,
-            ),
-            title: Text('やりたいこと'),
-          ),
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20),
-            child: Divider(),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-            child: Text(
               '達成済みリスト',
               style: Theme.of(context).textTheme.titleSmall,
             ),
@@ -116,10 +99,6 @@ class AchievedListPage extends StatelessWidget {
             label: 'リスト',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.details),
-            label: '詳細',
-          ),
-          BottomNavigationBarItem(
             icon: Icon(Icons.check),
             label: '達成済み',
           ),
@@ -128,17 +107,15 @@ class AchievedListPage extends StatelessWidget {
             label: 'マイページ',
           ),
         ],
-        currentIndex: 2,
+        currentIndex: 1,
         type: BottomNavigationBarType.fixed,
         onTap: (value) {
           switch (value) {
             case 0:
               context.push('/list');
             case 1:
-              context.push('/detail');
-            case 2:
               break;
-            case 3:
+            case 2:
               context.push('/mypage');
             default:
           }

@@ -1,7 +1,6 @@
 import 'package:bucket_list_app/main.dart';
 import 'package:bucket_list_app/presentation/pages/achieved_list_page.dart';
 import 'package:bucket_list_app/presentation/pages/auth_page.dart';
-import 'package:bucket_list_app/presentation/pages/detail_page.dart';
 import 'package:bucket_list_app/presentation/pages/list_page.dart';
 import 'package:bucket_list_app/presentation/pages/my_page.dart';
 import 'package:go_router/go_router.dart';
@@ -29,10 +28,6 @@ final goRouter = GoRouter(
     GoRoute(
       path: '/list',
       builder: (context, state) => const ListPage(),
-    ),
-    GoRoute(
-      path: '/detail',
-      builder: (context, state) => const DetailPage(),
     ),
     GoRoute(
       path: '/achieved',
