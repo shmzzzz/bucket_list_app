@@ -8,34 +8,44 @@ import 'package:go_router/go_router.dart';
 final goRouter = GoRouter(
   routes: [
     GoRoute(
-      path: '/',
+      path: RoutePaths.route,
       builder: (context, state) => const HomePage(),
       routes: <GoRoute>[
         GoRoute(
-          path: 'auth',
+          path: RoutePaths.auth,
           builder: (context, state) => const AuthPage(),
         ),
         GoRoute(
-          path: 'mypage',
+          path: RoutePaths.mypage,
           builder: (context, state) => const MyPage(),
         ),
       ],
     ),
     GoRoute(
-      path: '/auth',
+      path: RoutePaths.routeAuth,
       builder: (context, state) => const AuthPage(),
     ),
     GoRoute(
-      path: '/list',
+      path: RoutePaths.routeList,
       builder: (context, state) => const ListPage(),
     ),
     GoRoute(
-      path: '/achieved',
+      path: RoutePaths.routeAchieved,
       builder: (context, state) => const AchievedListPage(),
     ),
     GoRoute(
-      path: '/mypage',
+      path: RoutePaths.routeMyPage,
       builder: (context, state) => const MyPage(),
     ),
   ],
 );
+
+class RoutePaths {
+  static const route = '/';
+  static const auth = 'auth';
+  static const mypage = 'mypage';
+  static const routeAuth = '/auth';
+  static const routeList = '/list';
+  static const routeAchieved = '/achieved';
+  static const routeMyPage = '/mypage';
+}
