@@ -1,5 +1,6 @@
 import 'package:bucket_list_app/infrastructure/firebase/firebase_auth_error_handler.dart';
 import 'package:bucket_list_app/infrastructure/firebase/firebase_auth_ext.dart';
+import 'package:bucket_list_app/presentation/router/router.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -21,7 +22,7 @@ class SignInUseCase {
         password: password,
       ))
           .user;
-      context.go('/list');
+      context.go(RoutePaths.routeList);
     } on FirebaseAuthException catch (error) {
       var message = FirebaseAuthExt.fromCode(error.code).message;
       FirebaseAuthErrorHandler.handleFirebaseAuthError(

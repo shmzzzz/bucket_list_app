@@ -1,5 +1,6 @@
 import 'package:bucket_list_app/infrastructure/firebase/firebase_auth_error_handler.dart';
 import 'package:bucket_list_app/infrastructure/firebase/firebase_auth_ext.dart';
+import 'package:bucket_list_app/presentation/router/router.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -21,7 +22,7 @@ class SignUpUseCase {
         password: password,
       ))
           .user;
-      context.go('/mypage');
+      context.go(RoutePaths.routeMyPage);
       await FirebaseFirestore.instance.collection('users').doc(user!.uid).set({
         'username': 'ゲスト',
         'email': email,
