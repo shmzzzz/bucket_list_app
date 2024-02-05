@@ -2,6 +2,7 @@
 
 class AppStrings {
   static const appTitle = 'Bucket List';
+  static const appBarTitle = 'My Bucket List 100';
   static const signIn = 'SIGN IN';
   static const signUp = 'SIGN UP';
   static const authSignIn = 'アカウントをお持ちの方はこちら';
@@ -24,4 +25,22 @@ class AppStrings {
       'すでに登録されているメールアドレスです。\nサインインしてください。';
   static const invalidCredentialMessage = 'パスワードが間違っています。\n正しいパスワードを入力してください。';
   static const unknownMessage = '予期しないエラーが発生しました。';
+
+  /// 共通Widget関連
+  static const listTitle = '一覧';
+  static const categoryTitle = 'カテゴリ';
+  static const wantedTitle = 'やりたい度';
+
+  static const navDrawerListSection = 'リスト';
+  static const navDrawerAchievedListSection = '達成済みリスト';
+  static const navDrawerMyPageSection = 'マイページ';
+  static const navDrawerListItemTitle = '一覧';
+  static const navDrawerCategoryItemTitle = 'カテゴリ';
+  static const navDrawerWantedItemTitle = 'やりたい度';
+  static const navDrawerAchievedListItemTitle = '一覧';
+  static const navDrawerMyPageItemTitle = '設定';
+
+  static const bottomNavListLabel = 'リスト';
+  static const bottomNavAchievedLabel = '達成済み';
+  static const bottomNavMyPageLabel = 'マイページ';
 }

@@ -1,107 +1,34 @@
+import 'package:bucket_list_app/presentation/theme/app_strings.dart';
 import 'package:bucket_list_app/presentation/theme/theme.dart';
+import 'package:bucket_list_app/presentation/widgets/app_bottom_nav.dart';
+import 'package:bucket_list_app/presentation/widgets/tab_bar_items.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 
 class ListPage extends StatelessWidget {
   const ListPage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final List<Widget> tabItems = [
+      const Text(AppStrings.listTitle),
+      const Text(AppStrings.categoryTitle),
+      const Text(AppStrings.wantedTitle),
+    ];
+
+    const inititalTabIndex = 0;
+    const currentIndex = 0;
+
     return DefaultTabController(
-      initialIndex: 0,
-      length: 3,
+      initialIndex: inititalTabIndex,
+      length: tabItems.length,
       child: Scaffold(
         appBar: AppBar(
           title: const Text(
-            'My Bucket List 100',
+            AppStrings.appBarTitle,
           ),
-          bottom: const TabBar(
-            tabs: [
-              Tab(
-                text: '一覧',
-              ),
-              Tab(
-                text: 'カテゴリ',
-              ),
-              Tab(
-                text: 'やりたい度',
-              ),
-            ],
+          bottom: TabBarItems(
+            tabItems: tabItems,
           ),
-        ),
-        drawer: NavigationDrawer(
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(20),
-              child: Text(
-                'ようこそ ゲストさん！',
-                style: Theme.of(context).textTheme.titleMedium,
-              ),
-            ),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20),
-              child: Divider(),
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-              child: Text(
-                'リスト',
-                style: Theme.of(context).textTheme.titleSmall,
-              ),
-            ),
-            const ListTile(
-              leading: Icon(
-                Icons.list,
-              ),
-              title: Text('一覧'),
-            ),
-            const ListTile(
-              leading: Icon(
-                Icons.category,
-              ),
-              title: Text('カテゴリ'),
-            ),
-            const ListTile(
-              leading: Icon(
-                Icons.celebration,
-              ),
-              title: Text('やりたい度'),
-            ),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20),
-              child: Divider(),
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-              child: Text(
-                '達成済みリスト',
-                style: Theme.of(context).textTheme.titleSmall,
-              ),
-            ),
-            const ListTile(
-              leading: Icon(
-                Icons.library_add_check,
-              ),
-              title: Text('一覧'),
-            ),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20),
-              child: Divider(),
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-              child: Text(
-                'マイページ',
-                style: Theme.of(context).textTheme.titleSmall,
-              ),
-            ),
-            const ListTile(
-              leading: Icon(
-                Icons.settings,
-              ),
-              title: Text('設定'),
-            ),
-          ],
         ),
         body: TabBarView(
           children: [
@@ -146,34 +73,8 @@ class ListPage extends StatelessWidget {
             ),
           ],
         ),
-        bottomNavigationBar: BottomNavigationBar(
-          items: const [
-            BottomNavigationBarItem(
-              icon: Icon(Icons.list),
-              label: 'リスト',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.check),
-              label: '達成済み',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.account_circle),
-              label: 'マイページ',
-            ),
-          ],
-          currentIndex: 0,
-          type: BottomNavigationBarType.fixed,
-          onTap: (value) {
-            switch (value) {
-              case 0:
-                break;
-              case 1:
-                context.push('/achieved');
-              case 2:
-                context.push('/mypage');
-              default:
-            }
-          },
+        bottomNavigationBar: const AppBottomNav(
+          currentIndex: currentIndex,
         ),
       ),
     );

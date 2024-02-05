@@ -1,3 +1,6 @@
+import 'package:bucket_list_app/presentation/router/router.dart';
+import 'package:bucket_list_app/presentation/theme/app_strings.dart';
+import 'package:bucket_list_app/presentation/widgets/app_bottom_nav.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -7,96 +10,13 @@ class MyPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const currentIndex = 2;
+
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          'My Bucket List 100',
+          AppStrings.appBarTitle,
         ),
-      ),
-      drawer: NavigationDrawer(
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(20),
-            child: Text(
-              'ようこそ ゲストさん！',
-              style: Theme.of(context).textTheme.titleMedium,
-            ),
-          ),
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20),
-            child: Divider(),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-            child: Text(
-              'リスト',
-              style: Theme.of(context).textTheme.titleSmall,
-            ),
-          ),
-          const ListTile(
-            leading: Icon(
-              Icons.list,
-            ),
-            title: Text('一覧'),
-          ),
-          const ListTile(
-            leading: Icon(
-              Icons.category,
-            ),
-            title: Text('カテゴリ'),
-          ),
-          const ListTile(
-            leading: Icon(
-              Icons.celebration,
-            ),
-            title: Text('やりたい度'),
-          ),
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20),
-            child: Divider(),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-            child: Text(
-              '詳細',
-              style: Theme.of(context).textTheme.titleSmall,
-            ),
-          ),
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20),
-            child: Divider(),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-            child: Text(
-              '達成済みリスト',
-              style: Theme.of(context).textTheme.titleSmall,
-            ),
-          ),
-          const ListTile(
-            leading: Icon(
-              Icons.library_add_check,
-            ),
-            title: Text('一覧'),
-          ),
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20),
-            child: Divider(),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-            child: Text(
-              'マイページ',
-              style: Theme.of(context).textTheme.titleSmall,
-            ),
-          ),
-          const ListTile(
-            leading: Icon(
-              Icons.settings,
-            ),
-            title: Text('設定'),
-          ),
-        ],
       ),
       body: Center(
         child: Column(
@@ -109,7 +29,7 @@ class MyPage extends StatelessWidget {
             OutlinedButton(
               onPressed: () async {
                 await FirebaseAuth.instance.signOut();
-                context.go('/auth');
+                context.go(RoutePaths.routeAuth);
               },
               child: const Text(
                 'ログアウト',
@@ -118,34 +38,8 @@ class MyPage extends StatelessWidget {
           ],
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.list),
-            label: 'リスト',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.check),
-            label: '達成済み',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.account_circle),
-            label: 'マイページ',
-          ),
-        ],
-        currentIndex: 2,
-        type: BottomNavigationBarType.fixed,
-        onTap: (value) {
-          switch (value) {
-            case 0:
-              context.push('/list');
-            case 1:
-              context.push('/achieved');
-            case 2:
-              break;
-            default:
-          }
-        },
+      bottomNavigationBar: const AppBottomNav(
+        currentIndex: currentIndex,
       ),
     );
   }
