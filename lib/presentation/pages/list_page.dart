@@ -1,6 +1,6 @@
 import 'package:bucket_list_app/presentation/theme/app_strings.dart';
+import 'package:bucket_list_app/presentation/theme/app_text_styles.dart';
 import 'package:bucket_list_app/presentation/theme/theme.dart';
-import 'package:bucket_list_app/presentation/widgets/app_bottom_nav.dart';
 import 'package:bucket_list_app/presentation/widgets/tab_bar_items.dart';
 import 'package:flutter/material.dart';
 
@@ -16,7 +16,6 @@ class ListPage extends StatelessWidget {
     ];
 
     const inititalTabIndex = 0;
-    const currentIndex = 0;
 
     return DefaultTabController(
       initialIndex: inititalTabIndex,
@@ -24,7 +23,8 @@ class ListPage extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           title: const Text(
-            AppStrings.appBarTitle,
+            AppStrings.appBarTitleList,
+            style: AppTextStyles.appBarTextStyle,
           ),
           bottom: TabBarItems(
             tabItems: tabItems,
@@ -72,9 +72,6 @@ class ListPage extends StatelessWidget {
               },
             ),
           ],
-        ),
-        bottomNavigationBar: const AppBottomNav(
-          currentIndex: currentIndex,
         ),
       ),
     );

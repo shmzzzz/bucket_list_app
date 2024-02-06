@@ -1,6 +1,8 @@
 import 'package:bucket_list_app/presentation/router/router.dart';
 import 'package:bucket_list_app/presentation/theme/app_strings.dart';
-import 'package:bucket_list_app/presentation/widgets/app_bottom_nav.dart';
+import 'package:bucket_list_app/presentation/theme/app_text_styles.dart';
+import 'package:bucket_list_app/presentation/theme/sizes.dart';
+import 'package:bucket_list_app/presentation/theme/theme.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -10,12 +12,11 @@ class MyPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const currentIndex = 2;
-
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          AppStrings.appBarTitle,
+          AppStrings.appBarTitleMyPage,
+          style: AppTextStyles.appBarTextStyle,
         ),
       ),
       body: Center(
@@ -24,7 +25,10 @@ class MyPage extends StatelessWidget {
           children: [
             Text(
               'This is MY PAGE',
-              style: Theme.of(context).textTheme.titleLarge,
+              style: TextStyle(
+                color: MaterialTheme.lightScheme().primary,
+                fontSize: Sizes.f20,
+              ),
             ),
             OutlinedButton(
               onPressed: () async {
@@ -37,9 +41,6 @@ class MyPage extends StatelessWidget {
             ),
           ],
         ),
-      ),
-      bottomNavigationBar: const AppBottomNav(
-        currentIndex: currentIndex,
       ),
     );
   }

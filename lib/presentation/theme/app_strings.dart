@@ -2,7 +2,6 @@
 
 class AppStrings {
   static const appTitle = 'Bucket List';
-  static const appBarTitle = 'My Bucket List 100';
   static const signIn = 'SIGN IN';
   static const signUp = 'SIGN UP';
   static const authSignIn = 'アカウントをお持ちの方はこちら';
@@ -39,6 +38,10 @@ class AppStrings {
   static const navDrawerWantedItemTitle = 'やりたい度';
   static const navDrawerAchievedListItemTitle = '一覧';
   static const navDrawerMyPageItemTitle = '設定';
+
+  static const appBarTitleList = 'やってみたいことリスト';
+  static const appBarTitleAchieved = '達成済みリスト';
+  static const appBarTitleMyPage = 'マイページ';
 
   static const bottomNavListLabel = 'リスト';
   static const bottomNavAchievedLabel = '達成済み';

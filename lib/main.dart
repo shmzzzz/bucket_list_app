@@ -6,6 +6,7 @@ import 'package:bucket_list_app/presentation/router/router.dart';
 import 'package:bucket_list_app/presentation/theme/theme.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 void main() async {
@@ -46,7 +47,15 @@ class HomePage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final authStateAsync = ref.watch(authStateChangesProvider);
     return authStateAsync.when(
-      data: (user) => user != null ? const ListPage() : const AuthPage(),
+      data: (user) {
+        if (user != null) {
+          context.go(RoutePaths.routeList);
+          return const ListPage();
+        } else {
+          context.go(RoutePaths.routeAuth);
+          return const AuthPage();
+        }
+      },
       loading: () => const CircularProgressIndicator(),
       error: (err, stack) => Text('Error: $err'),
     );
