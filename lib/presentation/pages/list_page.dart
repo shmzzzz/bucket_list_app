@@ -1,5 +1,5 @@
 import 'package:bucket_list_app/presentation/theme/app_strings.dart';
-import 'package:bucket_list_app/presentation/theme/sizes.dart';
+import 'package:bucket_list_app/presentation/theme/app_text_styles.dart';
 import 'package:bucket_list_app/presentation/theme/theme.dart';
 import 'package:bucket_list_app/presentation/widgets/tab_bar_items.dart';
 import 'package:flutter/material.dart';
@@ -24,10 +24,7 @@ class ListPage extends StatelessWidget {
         appBar: AppBar(
           title: const Text(
             AppStrings.appBarTitleList,
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: Sizes.f20,
-            ),
+            style: AppTextStyles.appBarTextStyle,
           ),
           bottom: TabBarItems(
             tabItems: tabItems,
