@@ -33,7 +33,7 @@ class MyPage extends StatelessWidget {
             OutlinedButton(
               onPressed: () async {
                 await FirebaseAuth.instance.signOut();
-                context.go(RoutePaths.routeAuth);
+                context.go(RoutePaths.route + RoutePaths.auth);
               },
               child: const Text(
                 'ログアウト',
