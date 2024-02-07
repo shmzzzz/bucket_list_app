@@ -49,10 +49,10 @@ class HomePage extends ConsumerWidget {
     return authStateAsync.when(
       data: (user) {
         if (user != null) {
-          context.go(RoutePaths.routeList);
+          context.go(RoutePaths.route + RoutePaths.list);
           return const ListPage();
         } else {
-          context.go(RoutePaths.routeAuth);
+          context.go(RoutePaths.route + RoutePaths.auth);
           return const AuthPage();
         }
       },

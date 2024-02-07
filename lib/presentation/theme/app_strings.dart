@@ -42,6 +42,7 @@ class AppStrings {
   static const appBarTitleList = 'やってみたいことリスト';
   static const appBarTitleAchieved = '達成済みリスト';
   static const appBarTitleMyPage = 'マイページ';
+  static const appBarTitleListItem = '詳細';
 
   static const bottomNavListLabel = 'リスト';
   static const bottomNavAchievedLabel = '達成済み';

@@ -22,7 +22,7 @@ class SignUpUseCase {
         password: password,
       ))
           .user;
-      context.go(RoutePaths.routeMyPage);
+      context.go(RoutePaths.route + RoutePaths.myPage);
       await FirebaseFirestore.instance.collection('users').doc(user!.uid).set({
         'username': 'ゲスト',
         'email': email,

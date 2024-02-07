@@ -1,6 +1,7 @@
 import 'package:bucket_list_app/main.dart';
 import 'package:bucket_list_app/presentation/pages/achieved_list_page.dart';
 import 'package:bucket_list_app/presentation/pages/auth_page.dart';
+import 'package:bucket_list_app/presentation/pages/list_item_page.dart';
 import 'package:bucket_list_app/presentation/pages/list_page.dart';
 import 'package:bucket_list_app/presentation/pages/my_page.dart';
 import 'package:bucket_list_app/presentation/widgets/app_bottom_nav.dart';
@@ -9,14 +10,14 @@ import 'package:go_router/go_router.dart';
 
 final rootNavigatorKey = GlobalKey<NavigatorState>();
 final listNavigatorKey =
-    GlobalKey<NavigatorState>(debugLabel: RoutePaths.routeList);
-final achievedNavigatorKey =
-    GlobalKey<NavigatorState>(debugLabel: RoutePaths.routeAchieved);
+    GlobalKey<NavigatorState>(debugLabel: RoutePaths.route + RoutePaths.list);
+final achievedNavigatorKey = GlobalKey<NavigatorState>(
+    debugLabel: RoutePaths.route + RoutePaths.achieved);
 final myPageNavigatorKey =
-    GlobalKey<NavigatorState>(debugLabel: RoutePaths.routeMyPage);
+    GlobalKey<NavigatorState>(debugLabel: RoutePaths.route + RoutePaths.myPage);
 
 final goRouter = GoRouter(
-  initialLocation: RoutePaths.routeList,
+  initialLocation: RoutePaths.route + RoutePaths.list,
   navigatorKey: rootNavigatorKey,
   routes: [
     StatefulShellRoute.indexedStack(
@@ -29,8 +30,14 @@ final goRouter = GoRouter(
           navigatorKey: listNavigatorKey,
           routes: [
             GoRoute(
-              path: RoutePaths.routeList,
+              path: RoutePaths.route + RoutePaths.list,
               builder: (context, state) => const ListPage(),
+              routes: [
+                GoRoute(
+                  path: RoutePaths.listItem,
+                  builder: (context, state) => const ListItemPage(),
+                ),
+              ],
             ),
           ],
         ),
@@ -39,7 +46,7 @@ final goRouter = GoRouter(
           navigatorKey: achievedNavigatorKey,
           routes: [
             GoRoute(
-              path: RoutePaths.routeAchieved,
+              path: RoutePaths.route + RoutePaths.achieved,
               builder: (context, state) => const AchievedListPage(),
             ),
           ],
@@ -49,7 +56,7 @@ final goRouter = GoRouter(
           navigatorKey: myPageNavigatorKey,
           routes: [
             GoRoute(
-              path: RoutePaths.routeMyPage,
+              path: RoutePaths.route + RoutePaths.myPage,
               builder: (context, state) => const MyPage(),
             ),
           ],
@@ -73,8 +80,7 @@ class RoutePaths {
   static const route = '/';
   static const auth = 'auth';
   static const list = 'list';
-  static const routeAuth = '/auth';
-  static const routeList = '/list';
-  static const routeAchieved = '/achieved';
-  static const routeMyPage = '/mypage';
+  static const listItem = 'listItem';
+  static const achieved = 'achieved';
+  static const myPage = 'myPage';
 }

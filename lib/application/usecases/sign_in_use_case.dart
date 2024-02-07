@@ -22,7 +22,7 @@ class SignInUseCase {
         password: password,
       ))
           .user;
-      context.go(RoutePaths.routeList);
+      context.go(RoutePaths.route + RoutePaths.list);
     } on FirebaseAuthException catch (error) {
       var message = FirebaseAuthExt.fromCode(error.code).message;
       FirebaseAuthErrorHandler.handleFirebaseAuthError(
