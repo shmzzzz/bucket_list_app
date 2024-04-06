@@ -35,10 +35,20 @@ class ListItemPage extends HookWidget {
                 ),
                 builder: (builder) {
                   return Container(
-                    height: 200,
+                    height: 150,
                     color: Colors.transparent,
-                    child: const Center(
-                      child: Text("This is a modal sheet"),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        ListTile(
+                          title: const Text('追加'),
+                          onTap: () {},
+                        ),
+                        ListTile(
+                          title: const Text('キャンセル'),
+                          onTap: () {},
+                        ),
+                      ],
                     ),
                   );
                 },
