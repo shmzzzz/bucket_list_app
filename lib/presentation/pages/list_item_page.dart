@@ -12,6 +12,7 @@ class ListItemPage extends HookWidget {
   Widget build(BuildContext context) {
     final isChecked = useState(false);
     final titleController = useTextEditingController();
+    final memoController = useTextEditingController();
 
     return Scaffold(
       appBar: AppBar(
@@ -101,7 +102,7 @@ class ListItemPage extends HookWidget {
                   ),
                   Row(
                     children: [
-                      Icon(Icons.star_border),
+                      Icon(Icons.calendar_month),
                       const SizedBox(
                         width: Sizes.p10,
                       ),
@@ -112,6 +113,26 @@ class ListItemPage extends HookWidget {
                   ),
                 ],
               ),
+            ),
+            const SizedBox(
+              height: Sizes.p20,
+            ),
+            Expanded(
+              child: Container(
+                color: MaterialTheme.lightScheme().onPrimary,
+                padding: const EdgeInsets.all(Sizes.p20),
+                child: TextFormField(
+                  maxLines: null,
+                  controller: memoController,
+                  decoration: InputDecoration(
+                    border: InputBorder.none,
+                    hintText: 'メモの追加…',
+                  ),
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: Sizes.p20,
             ),
           ],
         ),
