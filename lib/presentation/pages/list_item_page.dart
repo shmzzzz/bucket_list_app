@@ -189,9 +189,6 @@ class ListItemPage extends HookWidget {
                 ),
               ),
             ),
-            const SizedBox(
-              height: Sizes.p20,
-            ),
           ],
         ),
       ),
