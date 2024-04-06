@@ -1,5 +1,5 @@
 > [!CAUTION]
-> <b>2024/03/29時点での実装状況を記載</b>
+> <b>2024/04/07時点での実装状況を記載</b>
 
 # bucket_list_app
 
@@ -45,9 +45,12 @@
 
 **詳細画面**
 - リストに表示するアイテムを登録する
-- 登録機能は未実装
+- 入力項目のデザインのみ作成済み
+- 登録機能などタップ時の処理は未実装
 
-<img width="50%" src="readme_files/詳細画面.png">
+画面表示時 | 入力項目タップ時 | 「･･･」ボタン(右上)タップ時
+--- | --- | --- 
+![image](https://github.com/shmzzzz/bucket_list_app/assets/85086833/f5422222-f501-405c-b02f-5dcab7c8012b) | ![image](https://github.com/shmzzzz/bucket_list_app/assets/85086833/72208245-7dc3-4555-92c8-7fb65a3c5779) | ![image](https://github.com/shmzzzz/bucket_list_app/assets/85086833/26b23da9-8914-44e5-8aaf-d5ca4a6eccc1)
 
 ---
 
