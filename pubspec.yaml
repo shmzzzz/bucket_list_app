@@ -43,6 +43,7 @@ dependencies:
   flutter_hooks: ^0.20.4
   hooks_riverpod: ^2.4.9
   cloud_firestore: ^4.15.0
+  modal_bottom_sheet: ^3.0.0-pre
 
 dev_dependencies:
   flutter_test:
