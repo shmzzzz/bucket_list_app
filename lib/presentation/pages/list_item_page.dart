@@ -4,6 +4,7 @@ import 'package:bucket_list_app/presentation/theme/sizes.dart';
 import 'package:bucket_list_app/presentation/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 
 class ListItemPage extends HookWidget {
   const ListItemPage({super.key});
@@ -23,23 +24,25 @@ class ListItemPage extends HookWidget {
         actions: [
           IconButton(
             onPressed: () {
-              showModalBottomSheet(
-                  context: context,
-                  shape: const RoundedRectangleBorder(
-                    borderRadius: BorderRadius.vertical(
-                      top: Radius.circular(
-                        Sizes.p20,
-                      ),
+              showMaterialModalBottomSheet(
+                context: context,
+                shape: const RoundedRectangleBorder(
+                  borderRadius: BorderRadius.vertical(
+                    top: Radius.circular(
+                      Sizes.p20,
                     ),
                   ),
-                  builder: (builder) {
-                    return Container(
-                      color: Colors.transparent,
-                      child: const Center(
-                        child: Text("This is a modal sheet"),
-                      ),
-                    );
-                  });
+                ),
+                builder: (builder) {
+                  return Container(
+                    height: 200,
+                    color: Colors.transparent,
+                    child: const Center(
+                      child: Text("This is a modal sheet"),
+                    ),
+                  );
+                },
+              );
             },
             icon: const Icon(
               Icons.more_horiz_outlined,
@@ -52,10 +55,11 @@ class ListItemPage extends HookWidget {
           children: [
             Container(
               color: MaterialTheme.lightScheme().onPrimary,
-              padding: const EdgeInsets.all(Sizes.p20),
-              child: Row(
-                children: [
-                  Checkbox(
+              child: ListTile(
+                leading: SizedBox(
+                  height: Sizes.s24,
+                  width: Sizes.s24,
+                  child: Checkbox(
                     value: isChecked.value,
                     onChanged: (value) {
                       if (value != null) {
@@ -63,19 +67,14 @@ class ListItemPage extends HookWidget {
                       }
                     },
                   ),
-                  const SizedBox(
-                    width: Sizes.p10,
+                ),
+                title: TextFormField(
+                  controller: titleController,
+                  decoration: InputDecoration(
+                    border: InputBorder.none,
+                    hintText: 'やりたいことの追加…',
                   ),
-                  Expanded(
-                    child: TextFormField(
-                      controller: titleController,
-                      decoration: InputDecoration(
-                        border: InputBorder.none,
-                        hintText: 'やりたいことの追加…',
-                      ),
-                    ),
-                  ),
-                ],
+                ),
               ),
             ),
             const SizedBox(
@@ -83,33 +82,82 @@ class ListItemPage extends HookWidget {
             ),
             Container(
               color: MaterialTheme.lightScheme().onPrimary,
-              padding: const EdgeInsets.all(Sizes.p20),
               child: Column(
                 children: [
-                  Row(
-                    children: [
-                      Icon(Icons.star_border),
-                      const SizedBox(
-                        width: Sizes.p10,
-                      ),
-                      Expanded(
-                        child: Text('やりたい度'),
-                      ),
-                    ],
+                  ListTile(
+                    leading: Icon(Icons.star_border),
+                    title: Text('やりたい度'),
+                    onTap: () {
+                      showMaterialModalBottomSheet(
+                        context: context,
+                        shape: const RoundedRectangleBorder(
+                          borderRadius: BorderRadius.vertical(
+                            top: Radius.circular(
+                              Sizes.p20,
+                            ),
+                          ),
+                        ),
+                        builder: (builder) {
+                          return Container(
+                            height: 200,
+                            color: Colors.transparent,
+                            child: const Center(
+                              child: Text("やりたい度入力"),
+                            ),
+                          );
+                        },
+                      );
+                    },
                   ),
-                  const SizedBox(
-                    height: Sizes.p20,
+                  ListTile(
+                    leading: Icon(Icons.calendar_month_outlined),
+                    title: Text('期限'),
+                    onTap: () {
+                      showMaterialModalBottomSheet(
+                        context: context,
+                        shape: const RoundedRectangleBorder(
+                          borderRadius: BorderRadius.vertical(
+                            top: Radius.circular(
+                              Sizes.p20,
+                            ),
+                          ),
+                        ),
+                        builder: (builder) {
+                          return Container(
+                            height: 200,
+                            color: Colors.transparent,
+                            child: const Center(
+                              child: Text("期限入力"),
+                            ),
+                          );
+                        },
+                      );
+                    },
                   ),
-                  Row(
-                    children: [
-                      Icon(Icons.calendar_month),
-                      const SizedBox(
-                        width: Sizes.p10,
-                      ),
-                      Expanded(
-                        child: Text('期限'),
-                      ),
-                    ],
+                  ListTile(
+                    leading: Icon(Icons.sell_outlined),
+                    title: Text('カテゴリ'),
+                    onTap: () {
+                      showMaterialModalBottomSheet(
+                        context: context,
+                        shape: const RoundedRectangleBorder(
+                          borderRadius: BorderRadius.vertical(
+                            top: Radius.circular(
+                              Sizes.p20,
+                            ),
+                          ),
+                        ),
+                        builder: (builder) {
+                          return Container(
+                            height: 200,
+                            color: Colors.transparent,
+                            child: const Center(
+                              child: Text("カテゴリ入力"),
+                            ),
+                          );
+                        },
+                      );
+                    },
                   ),
                 ],
               ),

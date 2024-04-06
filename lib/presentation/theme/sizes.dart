@@ -1,6 +1,7 @@
 /// 値の意味を含まないサイズ一覧
 class Sizes {
   /// padding
+  static const p8 = 8.0;
   static const p10 = 10.0;
   static const p14 = 14.0;
   static const p20 = 20.0;
@@ -13,4 +14,7 @@ class Sizes {
 
   /// fontSize
   static const f20 = 20.0;
+
+  /// SizedBox
+  static const s24 = 24.0;
 }
