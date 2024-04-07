@@ -2,8 +2,9 @@ import 'package:bucket_list_app/presentation/theme/app_strings.dart';
 import 'package:bucket_list_app/presentation/theme/app_text_styles.dart';
 import 'package:bucket_list_app/presentation/theme/sizes.dart';
 import 'package:bucket_list_app/presentation/theme/theme.dart';
+import 'package:bucket_list_app/presentation/widgets/due.dart';
 import 'package:bucket_list_app/presentation/widgets/title_text_form.dart';
-import 'package:bucket_list_app/presentation/widgets/wish_level.dart';
+import 'package:bucket_list_app/presentation/widgets/input_wish_level.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
@@ -78,31 +79,7 @@ class ListItemPage extends HookWidget {
               child: Column(
                 children: [
                   const WishLevel(),
-                  ListTile(
-                    leading: Icon(Icons.calendar_month_outlined),
-                    title: Text('期限'),
-                    onTap: () {
-                      showMaterialModalBottomSheet(
-                        context: context,
-                        shape: const RoundedRectangleBorder(
-                          borderRadius: BorderRadius.vertical(
-                            top: Radius.circular(
-                              Sizes.p20,
-                            ),
-                          ),
-                        ),
-                        builder: (builder) {
-                          return Container(
-                            height: 200,
-                            color: Colors.transparent,
-                            child: const Center(
-                              child: Text("期限入力"),
-                            ),
-                          );
-                        },
-                      );
-                    },
-                  ),
+                  const Due(),
                   ListTile(
                     leading: Icon(Icons.sell_outlined),
                     title: Text('カテゴリ'),
