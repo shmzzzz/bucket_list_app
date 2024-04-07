@@ -51,4 +51,7 @@ class AppStrings {
 
   static const addButton = '追加';
   static const cancelButton = 'キャンセル';
+
+  /// リストアイテム画面関連
+  static const dueTitle = '期限';
 }

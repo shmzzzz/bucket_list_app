@@ -2,9 +2,9 @@ import 'package:bucket_list_app/presentation/theme/app_strings.dart';
 import 'package:bucket_list_app/presentation/theme/app_text_styles.dart';
 import 'package:bucket_list_app/presentation/theme/sizes.dart';
 import 'package:bucket_list_app/presentation/theme/theme.dart';
-import 'package:bucket_list_app/presentation/widgets/due.dart';
-import 'package:bucket_list_app/presentation/widgets/title_text_form.dart';
+import 'package:bucket_list_app/presentation/widgets/input_due.dart';
 import 'package:bucket_list_app/presentation/widgets/input_wish_level.dart';
+import 'package:bucket_list_app/presentation/widgets/title_text_form.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
@@ -79,7 +79,7 @@ class ListItemPage extends HookWidget {
               child: Column(
                 children: [
                   const WishLevel(),
-                  const Due(),
+                  const InputDue(),
                   ListTile(
                     leading: Icon(Icons.sell_outlined),
                     title: Text('カテゴリ'),
