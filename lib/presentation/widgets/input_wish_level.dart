@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 
-class WishLevel extends ConsumerWidget {
-  const WishLevel({super.key});
+class InputWishLevel extends ConsumerWidget {
+  const InputWishLevel({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
