@@ -2,6 +2,7 @@ import 'package:bucket_list_app/presentation/theme/app_strings.dart';
 import 'package:bucket_list_app/presentation/theme/app_text_styles.dart';
 import 'package:bucket_list_app/presentation/theme/sizes.dart';
 import 'package:bucket_list_app/presentation/theme/theme.dart';
+import 'package:bucket_list_app/presentation/widgets/input_category.dart';
 import 'package:bucket_list_app/presentation/widgets/input_due.dart';
 import 'package:bucket_list_app/presentation/widgets/input_wish_level.dart';
 import 'package:bucket_list_app/presentation/widgets/title_text_form.dart';
@@ -78,33 +79,9 @@ class ListItemPage extends HookWidget {
               color: MaterialTheme.lightScheme().onPrimary,
               child: Column(
                 children: [
-                  const WishLevel(),
+                  const InputWishLevel(),
                   const InputDue(),
-                  ListTile(
-                    leading: Icon(Icons.sell_outlined),
-                    title: Text('カテゴリ'),
-                    onTap: () {
-                      showMaterialModalBottomSheet(
-                        context: context,
-                        shape: const RoundedRectangleBorder(
-                          borderRadius: BorderRadius.vertical(
-                            top: Radius.circular(
-                              Sizes.p20,
-                            ),
-                          ),
-                        ),
-                        builder: (builder) {
-                          return Container(
-                            height: 200,
-                            color: Colors.transparent,
-                            child: const Center(
-                              child: Text("カテゴリ入力"),
-                            ),
-                          );
-                        },
-                      );
-                    },
-                  ),
+                  const InputCategory(),
                 ],
               ),
             ),
