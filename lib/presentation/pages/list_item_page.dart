@@ -77,11 +77,11 @@ class ListItemPage extends HookWidget {
             ),
             Container(
               color: MaterialTheme.lightScheme().onPrimary,
-              child: Column(
+              child: const Column(
                 children: [
-                  const InputWishLevel(),
-                  const InputDue(),
-                  const InputCategory(),
+                  InputWishLevel(),
+                  InputDue(),
+                  InputCategory(),
                 ],
               ),
             ),
@@ -97,7 +97,7 @@ class ListItemPage extends HookWidget {
                   controller: memoController,
                   decoration: InputDecoration(
                     border: InputBorder.none,
-                    hintText: 'メモの追加…',
+                    hintText: AppStrings.hintMemo,
                   ),
                 ),
               ),
