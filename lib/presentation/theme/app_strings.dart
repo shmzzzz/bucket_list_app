@@ -10,6 +10,7 @@ class AppStrings {
   static const password = 'Password';
   static const errorEmail = 'メールアドレスを入力してください。';
   static const errorPassword = 'パスワードを入力してください。';
+  static const hintTitle = 'やりたいことの追加…';
   static const empty = '';
 
   /// FirebaseAuth関連のエラーメッセージ
@@ -47,4 +48,7 @@ class AppStrings {
   static const bottomNavListLabel = 'リスト';
   static const bottomNavAchievedLabel = '達成済み';
   static const bottomNavMyPageLabel = 'マイページ';
+
+  static const addButton = '追加';
+  static const cancelButton = 'キャンセル';
 }

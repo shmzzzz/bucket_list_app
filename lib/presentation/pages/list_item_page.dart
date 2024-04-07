@@ -2,6 +2,7 @@ import 'package:bucket_list_app/presentation/theme/app_strings.dart';
 import 'package:bucket_list_app/presentation/theme/app_text_styles.dart';
 import 'package:bucket_list_app/presentation/theme/sizes.dart';
 import 'package:bucket_list_app/presentation/theme/theme.dart';
+import 'package:bucket_list_app/presentation/widgets/title_text_form.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
@@ -11,9 +12,10 @@ class ListItemPage extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isChecked = useState(false);
-    final titleController = useTextEditingController();
-    final memoController = useTextEditingController();
+    final titleFormKey = GlobalKey<FormState>();
+
+    final titleController = useTextEditingController(text: AppStrings.empty);
+    final memoController = useTextEditingController(text: AppStrings.empty);
 
     return Scaffold(
       appBar: AppBar(
@@ -41,11 +43,11 @@ class ListItemPage extends HookWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         ListTile(
-                          title: const Text('追加'),
+                          title: const Text(AppStrings.addButton),
                           onTap: () {},
                         ),
                         ListTile(
-                          title: const Text('キャンセル'),
+                          title: const Text(AppStrings.cancelButton),
                           onTap: () {},
                         ),
                       ],
@@ -63,29 +65,9 @@ class ListItemPage extends HookWidget {
       body: Center(
         child: Column(
           children: [
-            Container(
-              color: MaterialTheme.lightScheme().onPrimary,
-              child: ListTile(
-                leading: SizedBox(
-                  height: Sizes.s24,
-                  width: Sizes.s24,
-                  child: Checkbox(
-                    value: isChecked.value,
-                    onChanged: (value) {
-                      if (value != null) {
-                        isChecked.value = value;
-                      }
-                    },
-                  ),
-                ),
-                title: TextFormField(
-                  controller: titleController,
-                  decoration: InputDecoration(
-                    border: InputBorder.none,
-                    hintText: 'やりたいことの追加…',
-                  ),
-                ),
-              ),
+            TitleTextForm(
+              formKey: titleFormKey,
+              controller: titleController,
             ),
             const SizedBox(
               height: Sizes.p20,
