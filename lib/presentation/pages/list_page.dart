@@ -14,7 +14,7 @@ class ListPage extends StatelessWidget {
     final List<Widget> tabItems = [
       const Text(AppStrings.listTitle),
       const Text(AppStrings.categoryTitle),
-      const Text(AppStrings.wantedTitle),
+      const Text(AppStrings.wishLevelTitle),
     ];
 
     const inititalTabIndex = 0;

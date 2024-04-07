@@ -29,7 +29,7 @@ class AppStrings {
   /// 共通Widget関連
   static const listTitle = '一覧';
   static const categoryTitle = 'カテゴリ';
-  static const wantedTitle = 'やりたい度';
+  static const wishLevelTitle = 'やりたい度';
 
   static const navDrawerListSection = 'リスト';
   static const navDrawerAchievedListSection = '達成済みリスト';
