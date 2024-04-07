@@ -4,6 +4,7 @@ import 'package:bucket_list_app/presentation/theme/sizes.dart';
 import 'package:bucket_list_app/presentation/theme/theme.dart';
 import 'package:bucket_list_app/presentation/widgets/input_category.dart';
 import 'package:bucket_list_app/presentation/widgets/input_due.dart';
+import 'package:bucket_list_app/presentation/widgets/input_memo.dart';
 import 'package:bucket_list_app/presentation/widgets/input_wish_level.dart';
 import 'package:bucket_list_app/presentation/widgets/title_text_form.dart';
 import 'package:flutter/material.dart';
@@ -16,6 +17,7 @@ class ListItemPage extends HookWidget {
   @override
   Widget build(BuildContext context) {
     final titleFormKey = GlobalKey<FormState>();
+    final memoFormKey = GlobalKey<FormState>();
 
     final titleController = useTextEditingController(text: AppStrings.empty);
     final memoController = useTextEditingController(text: AppStrings.empty);
@@ -88,19 +90,9 @@ class ListItemPage extends HookWidget {
             const SizedBox(
               height: Sizes.p20,
             ),
-            Expanded(
-              child: Container(
-                color: MaterialTheme.lightScheme().onPrimary,
-                padding: const EdgeInsets.all(Sizes.p20),
-                child: TextFormField(
-                  maxLines: null,
-                  controller: memoController,
-                  decoration: InputDecoration(
-                    border: InputBorder.none,
-                    hintText: AppStrings.hintMemo,
-                  ),
-                ),
-              ),
+            InputMemo(
+              formKey: memoFormKey,
+              controller: memoController,
             ),
           ],
         ),
