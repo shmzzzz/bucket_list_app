@@ -2,12 +2,12 @@ import 'package:bucket_list_app/presentation/theme/app_strings.dart';
 import 'package:bucket_list_app/presentation/theme/app_text_styles.dart';
 import 'package:bucket_list_app/presentation/theme/sizes.dart';
 import 'package:bucket_list_app/presentation/theme/theme.dart';
-import 'package:bucket_list_app/presentation/widgets/input_category.dart';
-import 'package:bucket_list_app/presentation/widgets/input_due.dart';
-import 'package:bucket_list_app/presentation/widgets/input_memo.dart';
-import 'package:bucket_list_app/presentation/widgets/input_wish_level.dart';
-import 'package:bucket_list_app/presentation/widgets/more_horiz_button.dart';
-import 'package:bucket_list_app/presentation/widgets/title_text_form.dart';
+import 'package:bucket_list_app/presentation/widgets/list_item/input_category.dart';
+import 'package:bucket_list_app/presentation/widgets/list_item/input_due.dart';
+import 'package:bucket_list_app/presentation/widgets/list_item/input_memo.dart';
+import 'package:bucket_list_app/presentation/widgets/list_item/input_wish_level.dart';
+import 'package:bucket_list_app/presentation/widgets/list_item/more_horiz_button.dart';
+import 'package:bucket_list_app/presentation/widgets/list_item/input_title.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 
@@ -35,7 +35,7 @@ class ListItemPage extends HookWidget {
       body: Center(
         child: Column(
           children: [
-            TitleTextForm(
+            InputTitle(
               formKey: titleFormKey,
               controller: titleController,
             ),

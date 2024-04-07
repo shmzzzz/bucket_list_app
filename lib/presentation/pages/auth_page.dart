@@ -2,10 +2,10 @@ import 'package:bucket_list_app/application/usecases/sign_in_use_case.dart';
 import 'package:bucket_list_app/application/usecases/sign_up_use_case.dart';
 import 'package:bucket_list_app/presentation/theme/app_strings.dart';
 import 'package:bucket_list_app/presentation/theme/sizes.dart';
-import 'package:bucket_list_app/presentation/widgets/auth_switch_button.dart';
-import 'package:bucket_list_app/presentation/widgets/auth_switch_text.dart';
-import 'package:bucket_list_app/presentation/widgets/email_text_form.dart';
-import 'package:bucket_list_app/presentation/widgets/password_text_form.dart';
+import 'package:bucket_list_app/presentation/widgets/auth/auth_switch_button.dart';
+import 'package:bucket_list_app/presentation/widgets/auth/auth_switch_text.dart';
+import 'package:bucket_list_app/presentation/widgets/auth/email_text_form.dart';
+import 'package:bucket_list_app/presentation/widgets/auth/password_text_form.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 

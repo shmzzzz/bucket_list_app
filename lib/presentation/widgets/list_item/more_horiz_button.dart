@@ -1,6 +1,6 @@
 import 'package:bucket_list_app/presentation/theme/sizes.dart';
-import 'package:bucket_list_app/presentation/widgets/item_add_button.dart';
-import 'package:bucket_list_app/presentation/widgets/item_cancel_button.dart';
+import 'package:bucket_list_app/presentation/widgets/list_item/item_add_button.dart';
+import 'package:bucket_list_app/presentation/widgets/list_item/item_cancel_button.dart';
 import 'package:flutter/material.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 

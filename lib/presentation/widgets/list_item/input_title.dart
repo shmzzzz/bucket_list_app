@@ -6,8 +6,8 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 
 /// リストアイテム画面
 /// タイトル入力フォーム
-class TitleTextForm extends HookWidget {
-  const TitleTextForm({
+class InputTitle extends HookWidget {
+  const InputTitle({
     super.key,
     required this.formKey,
     required this.controller,
