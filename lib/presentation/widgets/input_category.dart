@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 
+/// リストアイテム画面
+/// カテゴリ
 class InputCategory extends ConsumerWidget {
   const InputCategory({super.key});
 
