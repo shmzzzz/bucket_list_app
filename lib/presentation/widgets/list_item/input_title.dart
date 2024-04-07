@@ -1,6 +1,6 @@
 import 'package:bucket_list_app/presentation/theme/app_strings.dart';
-import 'package:bucket_list_app/presentation/theme/sizes.dart';
 import 'package:bucket_list_app/presentation/theme/theme.dart';
+import 'package:bucket_list_app/presentation/widgets/list_item/input_checkbox.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 
@@ -18,25 +18,12 @@ class InputTitle extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isChecked = useState(false);
-
     return Form(
       key: formKey,
       child: Container(
         color: MaterialTheme.lightScheme().onPrimary,
         child: ListTile(
-          leading: SizedBox(
-            height: Sizes.s24,
-            width: Sizes.s24,
-            child: Checkbox(
-              value: isChecked.value,
-              onChanged: (value) {
-                if (value != null) {
-                  isChecked.value = value;
-                }
-              },
-            ),
-          ),
+          leading: const InputCheckbox(),
           title: TextFormField(
             controller: controller,
             decoration: const InputDecoration(
