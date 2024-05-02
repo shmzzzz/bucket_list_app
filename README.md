@@ -7,34 +7,28 @@
 
 
 ## 使用ライブラリ
+![](https://img.shields.io/badge/flutter-v3.16.8-blue)
+![](https://img.shields.io/badge/go_router-v13.0.1-blue)
+![](https://img.shields.io/badge/firebase_core-v2.24.2-blue)
+![](https://img.shields.io/badge/firebase_auth-v4.16.0-blue)
+![](https://img.shields.io/badge/flutter_hooks-v0.20.4-blue)
+![](https://img.shields.io/badge/hooks_riverpod-v2.4.9-blue)
+![](https://img.shields.io/badge/cloud_firestore-v4.15.0-blue)
+![](https://img.shields.io/badge/modal_bottom_sheet-v3.0.0_pre-blue)
 
-- riverpod(v2.0)
-- flutter_hooks
-- go_router
 
 ## 画面仕様
 
 **ログイン画面**
-- 未ログインのユーザーに表示する
-- アカウント作成済みの場合はログイン
-- アカウント未作成の場合は新規作成
-- パスワードはデフォルトで非表示にする
-  - ボタンタップで表示/非表示の切り替え可能
 
 | ログイン                       | 新規登録                       |
 | ------------------------------ | ------------------------------ |
 | ![](readme_files/ログイン.png) | ![](readme_files/新規登録.png) |
+| アカウント作成済で未ログインのユーザーに表示する画面<br/>パスワードはデフォルトでマスキング<br/>アイコンタップでマスキングあり/なしを切り替え可能 | アカウント未作成のユーザーに表示する画面 |
 
 ---
 
 **リスト画面**
-- タブで表示内容を切り替えられる
-  - 一覧タブ
-  - カテゴリタブ
-  - やりたい度タブ
-- ボトムナビゲーションで画面を切り替えられる
-  - 達成済みタブタップで達成済みリスト画面に遷移
-  - マイページタブタップでマイページ画面に遷移
 - 右上「+」ボタンタップで詳細画面へ遷移
 
 | 一覧タブ                                  | カテゴリタブ                                  | やりたい度タブ                                  |
@@ -57,18 +51,18 @@
 **達成済みリスト画面**
 - 未実装
 
-<img width="50%" src="readme_files/達成済みリスト画面.png">
+<img width="30%" src="readme_files/達成済みリスト画面.png">
 
 ---
 
 **マイページ画面**
 - ログアウトボタンタップでログアウト可能
 
-<img width="50%" src="readme_files/マイページ画面.png">
+<img width="30%" src="readme_files/マイページ画面.png">
 
 ## Figma
 > [!NOTE]
-> 実装前に作成したもの<br/>
+> 実装前に作成<br/>
 > 一部デザインは実装をしながら修正している
 
   <img  src="readme_files/Figma.png">
