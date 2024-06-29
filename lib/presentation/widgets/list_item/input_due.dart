@@ -32,9 +32,12 @@ class _InputDueState extends ConsumerState<InputDue> {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      leading: const Icon(Icons.star_border),
+      leading: const Icon(Icons.calendar_month_outlined),
       title: const Text(AppStrings.dueTitle),
-      trailing: Text(inputDue),
+      trailing: Text(
+        inputDue,
+        style: const TextStyle(fontSize: Sizes.f16),
+      ),
       onTap: () => _openDatePicker(),
     );
   }
