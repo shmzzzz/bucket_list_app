@@ -1,3 +1,4 @@
+import 'package:bucket_list_app/application/state/memo_notifier.dart';
 import 'package:bucket_list_app/presentation/theme/app_strings.dart';
 import 'package:bucket_list_app/presentation/theme/sizes.dart';
 import 'package:bucket_list_app/presentation/theme/theme.dart';
@@ -18,6 +19,8 @@ class InputMemo extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final memo = ref.watch(memoNotifierProvider.notifier);
+
     return Expanded(
       child: Form(
         key: formKey,
@@ -31,6 +34,9 @@ class InputMemo extends HookConsumerWidget {
               border: InputBorder.none,
               hintText: AppStrings.hintMemo,
             ),
+            onChanged: (inputMemo) {
+              memo.setMemo(inputMemo);
+            },
           ),
         ),
       ),
