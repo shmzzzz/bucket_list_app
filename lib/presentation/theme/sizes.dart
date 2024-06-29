@@ -13,6 +13,7 @@ class Sizes {
   static const p80 = 80.0;
 
   /// fontSize
+  static const f16 = 16.0;
   static const f20 = 20.0;
 
   /// SizedBox
