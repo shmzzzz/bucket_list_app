@@ -24,11 +24,11 @@ class InputDue extends ConsumerWidget {
         DateFormat('yyyy/MM/dd').format(due),
         style: const TextStyle(fontSize: Sizes.f16),
       ),
-      onTap: () => _openDatePicker(context, ref),
+      onTap: () => _openDatePicker(context, ref, due),
     );
   }
 
-  void _openDatePicker(BuildContext context, WidgetRef ref) {
+  void _openDatePicker(BuildContext context, WidgetRef ref, DateTime due) {
     showMaterialModalBottomSheet(
       context: context,
       shape: const RoundedRectangleBorder(
@@ -47,6 +47,7 @@ class InputDue extends ConsumerWidget {
               onSubmit: (slectedDate) {
                 ref.read(dueNotifierProvider.notifier).setDue(slectedDate);
               },
+              initialDateTime: due,
               buttonStyle: BoxDecoration(
                 color: MaterialTheme.lightScheme().primary,
                 borderRadius: BorderRadius.circular(20),
