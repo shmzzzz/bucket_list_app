@@ -2,7 +2,7 @@ import 'package:bottom_picker/bottom_picker.dart';
 import 'package:bucket_list_app/application/state/due_notifier.dart';
 import 'package:bucket_list_app/presentation/theme/app_strings.dart';
 import 'package:bucket_list_app/presentation/theme/sizes.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:bucket_list_app/presentation/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intl/intl.dart';
@@ -44,10 +44,13 @@ class InputDue extends ConsumerWidget {
           color: Colors.transparent,
           child: Center(
             child: BottomPicker.date(
-              dateOrder: DatePickerDateOrder.ymd,
               onSubmit: (slectedDate) {
                 ref.read(dueNotifierProvider.notifier).setDue(slectedDate);
               },
+              buttonStyle: BoxDecoration(
+                color: MaterialTheme.lightScheme().primary,
+                borderRadius: BorderRadius.circular(20),
+              ),
             ),
           ),
         );
