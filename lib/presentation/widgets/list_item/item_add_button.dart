@@ -1,4 +1,5 @@
 import 'package:bucket_list_app/application/state/due_notifier.dart';
+import 'package:bucket_list_app/application/state/title_notifier.dart';
 import 'package:bucket_list_app/application/state/wish_level_notifier.dart';
 import 'package:bucket_list_app/presentation/router/router.dart';
 import 'package:bucket_list_app/presentation/theme/app_strings.dart';
@@ -16,12 +17,12 @@ class ItemAddButton extends ConsumerStatefulWidget {
 }
 
 class _ItemAddButtonState extends ConsumerState<ItemAddButton> {
-  String inputTitle = '';
   String inputCategory = '';
   String inputMemo = '';
 
   @override
   Widget build(BuildContext context) {
+    final inputTitle = ref.watch(titleNotifierProvider.notifier).getTitle();
     final inputWishLevel = ref.watch(wishLevelNotifierProvider);
     final inputDue = ref.watch(dueNotifierProvider);
 
@@ -29,11 +30,11 @@ class _ItemAddButtonState extends ConsumerState<ItemAddButton> {
       title: const Text(
         AppStrings.addButton,
       ),
-      onTap: () => _submitData(inputWishLevel, inputDue),
+      onTap: () => _submitData(inputTitle, inputWishLevel, inputDue),
     );
   }
 
-  void _submitData(int wishLevel, DateTime due) {
+  void _submitData(String title, int wishLevel, DateTime due) {
     try {
       // ユーザーのUIDを取得
       String userUid = FirebaseAuth.instance.currentUser!.uid;
@@ -43,7 +44,7 @@ class _ItemAddButtonState extends ConsumerState<ItemAddButton> {
       // ユーザーごとに出し分けたいため、collectionに渡すpathを変更する
       FirebaseFirestore.instance.collection(userPath).add(
         {
-          'title': inputTitle,
+          'title': title,
           'wish_level': wishLevel,
           'due': due,
           'memo': inputMemo,
