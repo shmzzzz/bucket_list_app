@@ -13,21 +13,6 @@ import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 class InputDue extends ConsumerWidget {
   const InputDue({super.key});
 
-// }
-
-// class _InputDueState extends ConsumerState<InputDue> {
-//   late DateTime due;
-//   late DateFormat dateFormat;
-//   late String inputDue = '';
-
-  // @override
-  // void initState() {
-  //   super.initState();
-  //   due = DateTime.now();
-  //   dateFormat = DateFormat('yyyy/MM/dd');
-  //   inputDue = dateFormat.format(due);
-  // }
-
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final due = ref.watch(dueNotifierProvider);
