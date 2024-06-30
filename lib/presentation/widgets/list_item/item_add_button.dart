@@ -1,3 +1,4 @@
+import 'package:bucket_list_app/application/state/category_notifier.dart';
 import 'package:bucket_list_app/application/state/due_notifier.dart';
 import 'package:bucket_list_app/application/state/memo_notifier.dart';
 import 'package:bucket_list_app/application/state/title_notifier.dart';
@@ -18,24 +19,35 @@ class ItemAddButton extends ConsumerStatefulWidget {
 }
 
 class _ItemAddButtonState extends ConsumerState<ItemAddButton> {
-  String inputCategory = '';
-
   @override
   Widget build(BuildContext context) {
     final inputTitle = ref.watch(titleNotifierProvider.notifier).getTitle();
     final inputWishLevel = ref.watch(wishLevelNotifierProvider);
     final inputDue = ref.watch(dueNotifierProvider);
+    final inputCategory = ref.read(categoryNotifierProvider);
     final inputMemo = ref.watch(memoNotifierProvider.notifier).getMemo();
 
     return ListTile(
       title: const Text(
         AppStrings.addButton,
       ),
-      onTap: () => _submitData(inputTitle, inputWishLevel, inputDue, inputMemo),
+      onTap: () => _submitData(
+        inputTitle,
+        inputWishLevel,
+        inputDue,
+        inputCategory,
+        inputMemo,
+      ),
     );
   }
 
-  void _submitData(String title, int wishLevel, DateTime due, String memo) {
+  void _submitData(
+    String title,
+    int wishLevel,
+    DateTime due,
+    int categoryIndex,
+    String memo,
+  ) {
     try {
       // ユーザーのUIDを取得
       String userUid = FirebaseAuth.instance.currentUser!.uid;
@@ -49,7 +61,7 @@ class _ItemAddButtonState extends ConsumerState<ItemAddButton> {
           'wish_level': wishLevel,
           'due': due,
           'memo': memo,
-          'category': inputCategory,
+          'category': categoryIndex,
           'createdAt': Timestamp.now()
         },
       );
