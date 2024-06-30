@@ -36,8 +36,8 @@ class _CategorySelectionSheetState extends State<CategorySelectionSheet> {
       height: MediaQuery.of(context).size.height / 5,
       color: Colors.transparent,
       child: Wrap(
-        spacing: 12,
-        runSpacing: 12,
+        spacing: Sizes.p12,
+        runSpacing: Sizes.p12,
         children: List<Widget>.generate(categoryList.length, (index) {
           final isSelected = selectedCategoryIndex == index;
           return ChoiceChip(

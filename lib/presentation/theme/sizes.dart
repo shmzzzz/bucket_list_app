@@ -3,6 +3,7 @@ class Sizes {
   /// padding
   static const p8 = 8.0;
   static const p10 = 10.0;
+  static const p12 = 12.0;
   static const p14 = 14.0;
   static const p20 = 20.0;
   static const p28 = 28.0;
