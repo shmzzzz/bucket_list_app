@@ -5,9 +5,9 @@ import 'package:bucket_list_app/presentation/theme/theme.dart';
 import 'package:bucket_list_app/presentation/widgets/list_item/input_category.dart';
 import 'package:bucket_list_app/presentation/widgets/list_item/input_due.dart';
 import 'package:bucket_list_app/presentation/widgets/list_item/input_memo.dart';
+import 'package:bucket_list_app/presentation/widgets/list_item/input_title.dart';
 import 'package:bucket_list_app/presentation/widgets/list_item/input_wish_level.dart';
 import 'package:bucket_list_app/presentation/widgets/list_item/more_horiz_button.dart';
-import 'package:bucket_list_app/presentation/widgets/list_item/input_title.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 
