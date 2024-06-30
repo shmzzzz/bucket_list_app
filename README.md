@@ -1,5 +1,5 @@
 > [!CAUTION]
-> <b>2024/04/07時点での実装状況を記載</b>
+> <b>2024/06/30 時点での実装状況を記載</b>
 
 # bucket_list_app
 
@@ -44,7 +44,8 @@
 
 画面表示時 | 入力項目タップ時 | 「･･･」ボタン(右上)タップ時
 --- | --- | --- 
-![image](https://github.com/shmzzzz/bucket_list_app/assets/85086833/f5422222-f501-405c-b02f-5dcab7c8012b) | ![image](https://github.com/shmzzzz/bucket_list_app/assets/85086833/72208245-7dc3-4555-92c8-7fb65a3c5779) | ![image](https://github.com/shmzzzz/bucket_list_app/assets/85086833/26b23da9-8914-44e5-8aaf-d5ca4a6eccc1)
+![image](https://github.com/shmzzzz/bucket_list_app/assets/85086833/e7a5de97-00d3-490f-a064-ba7bae905764) | ![image](https://github.com/shmzzzz/bucket_list_app/assets/85086833/cf355891-29a9-4ff7-9b6f-274564e6212d) | ![image](https://github.com/shmzzzz/bucket_list_app/assets/85086833/11150bbb-39fc-47de-82ac-a915b0a9b412)
+
 
 ---
 
