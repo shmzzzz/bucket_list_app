@@ -34,7 +34,12 @@ class _InputCategoryState extends ConsumerState<InputCategory> {
       trailing: Consumer(
         builder: (context, ref, _) {
           final selectedCategory = categoryList[selectedCategoryIndex];
-          return Text(selectedCategory);
+          return Text(
+            selectedCategory,
+            style: const TextStyle(
+              fontSize: Sizes.f16,
+            ),
+          );
         },
       ),
       onTap: () {
