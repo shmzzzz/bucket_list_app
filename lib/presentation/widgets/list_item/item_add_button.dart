@@ -1,3 +1,4 @@
+import 'package:bucket_list_app/application/state/achieved_notifier.dart';
 import 'package:bucket_list_app/application/state/category_notifier.dart';
 import 'package:bucket_list_app/application/state/due_notifier.dart';
 import 'package:bucket_list_app/application/state/memo_notifier.dart';
@@ -21,6 +22,7 @@ class ItemAddButton extends ConsumerStatefulWidget {
 class _ItemAddButtonState extends ConsumerState<ItemAddButton> {
   @override
   Widget build(BuildContext context) {
+    final inputIsAchieved = ref.watch(achievedNotifierProvider);
     final inputTitle = ref.watch(titleNotifierProvider.notifier).getTitle();
     final inputWishLevel = ref.watch(wishLevelNotifierProvider);
     final inputDue = ref.watch(dueNotifierProvider);
@@ -32,6 +34,7 @@ class _ItemAddButtonState extends ConsumerState<ItemAddButton> {
         AppStrings.addButton,
       ),
       onTap: () => _submitData(
+        inputIsAchieved,
         inputTitle,
         inputWishLevel,
         inputDue,
@@ -42,6 +45,7 @@ class _ItemAddButtonState extends ConsumerState<ItemAddButton> {
   }
 
   void _submitData(
+    bool isAchieved,
     String title,
     int wishLevel,
     DateTime due,
@@ -57,6 +61,7 @@ class _ItemAddButtonState extends ConsumerState<ItemAddButton> {
       // ユーザーごとに出し分けたいため、collectionに渡すpathを変更する
       FirebaseFirestore.instance.collection(userPath).add(
         {
+          'isAchieved': isAchieved,
           'title': title,
           'wish_level': wishLevel,
           'due': due,
