@@ -4,7 +4,7 @@ import 'package:bucket_list_app/presentation/pages/auth_page.dart';
 import 'package:bucket_list_app/presentation/pages/list_item_page.dart';
 import 'package:bucket_list_app/presentation/pages/list_page.dart';
 import 'package:bucket_list_app/presentation/pages/my_page.dart';
-import 'package:bucket_list_app/presentation/widgets/app_bottom_nav.dart';
+import 'package:bucket_list_app/presentation/widgets/common/app_bottom_nav.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 

@@ -28,7 +28,7 @@ class AppStrings {
   /// 共通Widget関連
   static const listTitle = '一覧';
   static const categoryTitle = 'カテゴリ';
-  static const wantedTitle = 'やりたい度';
+  static const wishLevelTitle = 'やりたい度';
 
   static const navDrawerListSection = 'リスト';
   static const navDrawerAchievedListSection = '達成済みリスト';
@@ -47,4 +47,12 @@ class AppStrings {
   static const bottomNavListLabel = 'リスト';
   static const bottomNavAchievedLabel = '達成済み';
   static const bottomNavMyPageLabel = 'マイページ';
+
+  static const addButton = '追加';
+  static const cancelButton = 'キャンセル';
+
+  /// リストアイテム画面関連
+  static const hintTitle = 'やりたいことの追加…';
+  static const dueTitle = '期限';
+  static const hintMemo = 'メモの追加…';
 }

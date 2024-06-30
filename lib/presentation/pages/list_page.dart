@@ -2,7 +2,7 @@ import 'package:bucket_list_app/presentation/router/router.dart';
 import 'package:bucket_list_app/presentation/theme/app_strings.dart';
 import 'package:bucket_list_app/presentation/theme/app_text_styles.dart';
 import 'package:bucket_list_app/presentation/theme/theme.dart';
-import 'package:bucket_list_app/presentation/widgets/tab_bar_items.dart';
+import 'package:bucket_list_app/presentation/widgets/list/tab_bar_items.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -14,7 +14,7 @@ class ListPage extends StatelessWidget {
     final List<Widget> tabItems = [
       const Text(AppStrings.listTitle),
       const Text(AppStrings.categoryTitle),
-      const Text(AppStrings.wantedTitle),
+      const Text(AppStrings.wishLevelTitle),
     ];
 
     const inititalTabIndex = 0;
