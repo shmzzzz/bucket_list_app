@@ -40,7 +40,7 @@ class InputDue extends ConsumerWidget {
       ),
       builder: (builder) {
         return Container(
-          height: 300,
+          height: MediaQuery.of(context).size.height / 3,
           color: Colors.transparent,
           child: Center(
             child: BottomPicker.date(
