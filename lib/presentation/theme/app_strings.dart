@@ -55,4 +55,13 @@ class AppStrings {
   static const hintTitle = 'やりたいことの追加…';
   static const dueTitle = '期限';
   static const hintMemo = 'メモの追加…';
+
+  /// カテゴリリスト
+  static const catTravel = '旅行';
+  static const catFamily = '家族';
+  static const catRelation = '人間関係';
+  static const catMeal = '食事';
+  static const catWork = '仕事';
+  static const catMoney = 'お金';
+  static const catExperience = '体験・経験';
 }
