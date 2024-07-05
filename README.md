@@ -43,7 +43,8 @@
 
 画面表示時 | 入力項目タップ時 | 「･･･」ボタン(右上)タップ時
 --- | --- | --- 
-![image](https://github.com/shmzzzz/bucket_list_app/assets/85086833/e7a5de97-00d3-490f-a064-ba7bae905764) | ![image](https://github.com/shmzzzz/bucket_list_app/assets/85086833/cf355891-29a9-4ff7-9b6f-274564e6212d) | ![image](https://github.com/shmzzzz/bucket_list_app/assets/85086833/cf46c466-ec91-46f1-bfa1-4c0ea8f9a81c)
+![image](https://github.com/shmzzzz/bucket_list_app/assets/85086833/e7a5de97-00d3-490f-a064-ba7bae905764) | ![image](https://github.com/shmzzzz/bucket_list_app/assets/85086833/9498a970-9b8f-408f-8f5d-88ec1e2c160e) | ![image](https://github.com/shmzzzz/bucket_list_app/assets/85086833/3ae7ff9c-5cc3-4ebc-b0ff-6828b648cac6)
+
 
 
 
