@@ -52,6 +52,11 @@ class _ItemAddButtonState extends ConsumerState<ItemAddButton> {
     int categoryIndex,
     String memo,
   ) {
+    // タイトルのみ必須にしたいのでバリデーションを追加する
+    if (title.trim().isEmpty) {
+      _showSnackBar('タイトルを入力してください');
+      return;
+    }
     try {
       // ユーザーのUIDを取得
       String userUid = FirebaseAuth.instance.currentUser!.uid;
