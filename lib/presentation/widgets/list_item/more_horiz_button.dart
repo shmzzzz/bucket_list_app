@@ -25,8 +25,13 @@ class MoreHorizButton extends StatelessWidget {
           ),
           builder: (builder) {
             return Container(
+              decoration: const BoxDecoration(
+                borderRadius: BorderRadius.vertical(
+                  top: Radius.circular(Sizes.p20),
+                ),
+                color: Colors.white,
+              ),
               height: 150,
-              color: Colors.transparent,
               child: const Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [

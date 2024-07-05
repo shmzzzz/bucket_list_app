@@ -50,6 +50,7 @@ class AppStrings {
 
   static const addButton = '追加';
   static const cancelButton = 'キャンセル';
+  static const okButton = 'OK';
 
   /// リストアイテム画面関連
   static const hintTitle = 'やりたいことの追加…';

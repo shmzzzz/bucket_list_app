@@ -32,6 +32,7 @@ class _ItemAddButtonState extends ConsumerState<ItemAddButton> {
     return ListTile(
       title: const Text(
         AppStrings.addButton,
+        textAlign: TextAlign.center,
       ),
       onTap: () => _submitData(
         inputIsAchieved,

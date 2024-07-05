@@ -1,5 +1,6 @@
 import 'package:bucket_list_app/presentation/theme/app_strings.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class ItemCancelButton extends StatelessWidget {
   const ItemCancelButton({super.key});
@@ -9,8 +10,11 @@ class ItemCancelButton extends StatelessWidget {
     return ListTile(
       title: const Text(
         AppStrings.cancelButton,
+        textAlign: TextAlign.center,
       ),
-      onTap: () {},
+      onTap: () {
+        context.pop();
+      },
     );
   }
 }

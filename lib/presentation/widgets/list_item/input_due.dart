@@ -52,6 +52,11 @@ class InputDue extends ConsumerWidget {
                 color: MaterialTheme.lightScheme().primary,
                 borderRadius: BorderRadius.circular(20),
               ),
+              buttonContent: const Text(
+                AppStrings.okButton,
+                style: TextStyle(color: Colors.white),
+                textAlign: TextAlign.center,
+              ),
             ),
           ),
         );
