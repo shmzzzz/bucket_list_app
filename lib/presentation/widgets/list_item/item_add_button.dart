@@ -53,7 +53,7 @@ class _ItemAddButtonState extends ConsumerState<ItemAddButton> {
     String memo,
   ) {
     // タイトルのみ必須にしたいのでバリデーションを追加する
-    if (title.isEmpty) {
+    if (title.trim().isEmpty) {
       _showSnackBar('タイトルを入力してください');
       return;
     }
