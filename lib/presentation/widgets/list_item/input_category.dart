@@ -46,13 +46,7 @@ class _InputCategoryState extends ConsumerState<InputCategory> {
       onTap: () {
         showMaterialModalBottomSheet(
           context: context,
-          shape: const RoundedRectangleBorder(
-            borderRadius: BorderRadius.vertical(
-              top: Radius.circular(
-                Sizes.p20,
-              ),
-            ),
-          ),
+          backgroundColor: Colors.transparent,
           builder: (builder) {
             return CategorySelectionSheet(
               initialCategoryIndex: selectedCategoryIndex,

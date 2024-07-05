@@ -31,10 +31,15 @@ class _CategorySelectionSheetState extends State<CategorySelectionSheet> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      decoration: const BoxDecoration(
+        borderRadius: BorderRadius.vertical(
+          top: Radius.circular(Sizes.p20),
+        ),
+        color: Colors.white,
+      ),
+      height: MediaQuery.of(context).size.height / 5,
       padding: const EdgeInsets.all(Sizes.p10),
       alignment: Alignment.center,
-      height: MediaQuery.of(context).size.height / 5,
-      color: Colors.transparent,
       child: Wrap(
         spacing: Sizes.p12,
         runSpacing: Sizes.p12,
@@ -52,6 +57,15 @@ class _CategorySelectionSheetState extends State<CategorySelectionSheet> {
                 widget.onCategorySelected(index);
               }
             },
+            shape: RoundedRectangleBorder(
+              side: BorderSide(
+                color: isSelected
+                    ? Colors.white
+                    : MaterialTheme.lightScheme().primary,
+                width: Sizes.b05,
+              ),
+              borderRadius: BorderRadius.circular(8),
+            ),
             selectedColor: MaterialTheme.lightScheme().primary,
             backgroundColor: Colors.white,
             labelStyle: TextStyle(

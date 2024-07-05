@@ -19,4 +19,7 @@ class Sizes {
 
   /// SizedBox
   static const s24 = 24.0;
+
+  /// Border
+  static const b05 = 0.5;
 }
